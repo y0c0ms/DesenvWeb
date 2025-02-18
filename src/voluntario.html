@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+  <meta charset="UTF-8">
+  <title>Candidatura a Voluntário - Festival Vilar de Mouros 2025</title>
+  <style>
+    body {
+      display: flex;
+      justify-content: center;
+      align-items: flex-start;;
+      height: 100vh;
+      margin: 0;
+    }
+    .container {
+      width: 80%;
+      max-width: 0 auto;
+      text-align: center;
+    }
+    table {
+      margin: 0 auto;
+    }
+    ul {
+      list-style-position: inside;
+      padding: 0;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <!-- Cabeçalho da página -->
+    <header>
+      <h1>Festival Vilar de Mouros 2025</h1>
+    </header>
+
+    <!-- Barra de navegação -->
+    <nav>
+      <ul>
+        <li><a href="index.html">Início</a></li>
+        <li><a href="voluntario.html">Candidatura a Voluntário</a></li>
+      </ul>
+    </nav>
+
+    <!-- Conteúdo principal -->
+    <article>
+      <section>
+        <h2>Formulário de Candidatura a Voluntário</h2>
+        <form action="aceite.html" method="get">
+          <p>
+            <label for="nome">Nome:</label>
+            <input type="text" id="nome" name="nome" required>
+          </p>
+          <p>
+            <label for="contacto">Contacto:</label>
+            <input type="text" id="contacto" name="contacto" required>
+          </p>
+
+          <!-- Slider para indicar o número de dias disponíveis -->
+          <p>
+            <label for="diasCount">
+              Quantos dias você pode estar presente: 
+              <span id="sliderValue">1</span>
+            </label>
+            <input type="range" id="diasCount" name="diasCount" min="1" max="4" value="1" oninput="updateDaysFields()">
+          </p>
+
+          <!-- Container onde serão exibidos os grupos de data/hora -->
+          <div id="daysContainer">
+            <div class="dayGroup" id="group1">
+              <p>
+                <label for="dias1">Data 1:</label>
+                <input list="dias-list" id="dias1" name="dias1" required>
+              </p>
+              <p>
+                <label for="horario1">Horário 1:</label>
+                <input list="horarios-list" id="horario1" name="horario1" required>
+              </p>
+            </div>
+            <div class="dayGroup" id="group2" style="display: none;">
+              <p>
+                <label for="dias2">Data 2:</label>
+                <input list="dias-list" id="dias2" name="dias2">
+              </p>
+              <p>
+                <label for="horario2">Horário 2:</label>
+                <input list="horarios-list" id="horario2" name="horario2">
+              </p>
+            </div>
+            <div class="dayGroup" id="group3" style="display: none;">
+              <p>
+                <label for="dias3">Data 3:</label>
+                <input list="dias-list" id="dias3" name="dias3">
+              </p>
+              <p>
+                <label for="horario3">Horário 3:</label>
+                <input list="horarios-list" id="horario3" name="horario3">
+              </p>
+            </div>
+            <div class="dayGroup" id="group4" style="display: none;">
+              <p>
+                <label for="dias4">Data 4:</label>
+                <input list="dias-list" id="dias4" name="dias4">
+              </p>
+              <p>
+                <label for="horario4">Horário 4:</label>
+                <input list="horarios-list" id="horario4" name="horario4">
+              </p>
+            </div>
+          </div>
+
+          <!-- Definição única dos datalists -->
+          <datalist id="dias-list">
+            <option value="21">
+            <option value="22">
+            <option value="23">
+            <option value="24">
+          </datalist>
+          <datalist id="horarios-list">
+            <option value="O dia todo">
+            <option value="Tarde">
+            <option value="Noite">
+          </datalist>
+
+          <p>
+            <button type="submit">Submeter Candidatura</button>
+          </p>
+        </form>
+      </section>
+    </article>
+
+    <!-- Rodapé com contactos -->
+    <footer>
+      <p>Contactos: Email: info@vilardemouros.com | Telefone: 1234-5678</p>
+      <p>&copy; 2025 Festival Vilar de Mouros. Todos os direitos reservados.</p>
+    </footer>
+  </div>
+
+  <script>
+    function updateDaysFields() {
+      // Obtém o valor do slider
+      var count = parseInt(document.getElementById("diasCount").value);
+      document.getElementById("sliderValue").textContent = count;
+      
+      // Exibe ou oculta os grupos de data/hora conforme o valor do slider
+      for (var i = 1; i <= 4; i++) {
+        var group = document.getElementById("group" + i);
+        if (i <= count) {
+          group.style.display = "block";
+          // Define os campos como obrigatórios (para os grupos exibidos)
+          var dataInput = group.querySelector('input[list="dias-list"]');
+          var timeInput = group.querySelector('input[list="horarios-list"]');
+          if (dataInput) dataInput.required = true;
+          if (timeInput) timeInput.required = true;
+        } else {
+          group.style.display = "none";
+          // Remove a obrigatoriedade dos campos não exibidos
+          var dataInput = group.querySelector('input[list="dias-list"]');
+          var timeInput = group.querySelector('input[list="horarios-list"]');
+          if (dataInput) dataInput.required = false;
+          if (timeInput) timeInput.required = false;
+        }
+      }
+      
+      // Se o número máximo (4) for selecionado, preenche automaticamente as datas
+      if (count === 4) {
+        document.getElementById("dias1").value = "21";
+        document.getElementById("dias2").value = "22";
+        document.getElementById("dias3").value = "23";
+        document.getElementById("dias4").value = "24";
+      }
+    }
+    // Inicializa os campos conforme o valor padrão do slider
+    updateDaysFields();
+  </script>
+</body>
+</html>
