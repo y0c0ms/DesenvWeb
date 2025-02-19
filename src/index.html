@@ -4,57 +4,118 @@
   <meta charset="UTF-8">
   <title>Festival Vilar de Mouros 2025</title>
   <style>
+    /* Estilos comuns a todas as páginas */
     body {
-      display: flex;
-      justify-content: center;
-      align-items: flex-start;;
-      height: 100vh;
       margin: 0;
+      font-family: Arial, sans-serif;
+      background: #f2f2f2;
     }
     .container {
       width: 80%;
-      max-width: 0 auto;
+      max-width: 1200px;
+      margin: 0 auto;
       text-align: center;
+      background: #fff;
+      padding: 20px;
+    }
+    header {
+      position: relative;
+    }
+    /* A foto do festival no header */
+    header img#festivalPhoto {
+  width: 100%;
+  height: auto;
+ 
+  transition: opacity 0.3s ease;
+}
+    /* Menu de navegação responsivo */
+    nav ul {
+      list-style: none;
+      padding: 0;
+      margin: 20px 0;
+      background: #333;
+      overflow: hidden;
+    }
+    nav ul li {
+      display: inline-block;
+    }
+    nav ul li a {
+      display: block;
+      padding: 14px 20px;
+      text-decoration: none;
+      color: #fff;
+      transition: background-color 0.3s ease;
+    }
+    nav ul li a:hover {
+      background-color: #555;
+    }
+    article {
+      margin: 20px 0;
+    }
+    footer {
+      background: #333;
+      color: #fff;
+      padding: 10px;
+      margin-top: 20px;
     }
     table {
       margin: 0 auto;
+      border-collapse: collapse;
     }
-    ul {
-      list-style-position: inside;
-      padding: 0;
+    table, th, td {
+      border: 1px solid #ccc;
+      padding: 8px;
+    }
+    /* Slideshow */
+    #slideshow {
+      position: relative;
+      width: 100%;
+      max-width: 600px;
+      margin: 20px auto;
+      overflow: hidden;
+    }
+    #slideshow img {
+      width: 100%;
+      display: none;
     }
   </style>
 </head>
 <body>
   <div class="container">
-    <!-- Cabeçalho da página -->
+    <!-- Cabeçalho com foto do festival -->
     <header>
       <h1>Festival Vilar de Mouros 2025</h1>
+      <img id="festivalPhoto" src="festival.png" alt="Imagem do Festival Vilar de Mouros">
     </header>
-
-    <!-- Barra de navegação -->
+    
+    <!-- Menu de navegação -->
     <nav>
       <ul>
         <li><a href="index.html">Início</a></li>
         <li><a href="voluntario.html">Candidatura a Voluntário</a></li>
       </ul>
     </nav>
-
+    
+    <!-- Slideshow com as imagens dos festivais anteriores -->
+    <div id="slideshow">
+      <img src="multidao2022.png" alt="Multidão 2022">
+      <img src="palco2014.png" alt="Palco 2014">
+      <img src="rio2003.jpeg" alt="Rio 2003">
+      <img src="pessoas1971.png" alt="Pessoas 1971">
+    </div>
+    
     <!-- Conteúdo principal -->
     <article>
-      <!-- Seção sobre o festival -->
       <section>
         <h2>Sobre o Festival</h2>
         <p>Bem-vindo ao Festival Vilar de Mouros 2025! Este evento reúne artistas nacionais e internacionais e acontecerá de 10 a 12 de agosto. Venha viver momentos inesquecíveis com música, arte e muita energia!</p>
       </section>
-
-      <!-- Seção com a programação -->
+      
       <section>
         <h2>Programação</h2>
-
         <!-- Tabela para o dia 21/08 -->
         <h3>21 de Agosto</h3>
-        <table border="1">
+        <table>
           <thead>
             <tr>
               <th>Horário</th>
@@ -84,10 +145,10 @@
             </tr>
           </tbody>
         </table>
-
+        
         <!-- Tabela para o dia 22/08 -->
         <h3>22 de Agosto</h3>
-        <table border="1">
+        <table>
           <thead>
             <tr>
               <th>Horário</th>
@@ -117,10 +178,10 @@
             </tr>
           </tbody>
         </table>
-
+        
         <!-- Tabela para o dia 23/08 -->
         <h3>23 de Agosto</h3>
-        <table border="1">
+        <table>
           <thead>
             <tr>
               <th>Horário</th>
@@ -150,10 +211,10 @@
             </tr>
           </tbody>
         </table>
-
+        
         <!-- Tabela para o dia 24/08 -->
         <h3>24 de Agosto</h3>
-        <table border="1">
+        <table>
           <thead>
             <tr>
               <th>Horário</th>
@@ -184,8 +245,7 @@
           </tbody>
         </table>
       </section>
-
-      <!-- Seção com links associados -->
+      
       <section>
         <h2>Festivais Recomendados</h2>
         <ul>
@@ -195,27 +255,20 @@
         </ul>
       </section>
     </article>
-
-    <!-- Sidebar com notícias -->
+    
     <aside>
       <h3>Notícias</h3>
       <p>Novos artistas confirmados para 2025!</p>
       <p>Não perca os workshops e as atividades interativas durante o festival.</p>
     </aside>
-
-    <!-- Imagem do festival com link para o site oficial -->
-    <figure>
-      <a href="https://www.vilardemouros.pt" target="_blank">
-        <img src="festival.png" alt="Imagem do Festival Vilar de Mouros" width="600">
-      </a>
-      <figcaption>Imagem oficial do Festival Vilar de Mouros</figcaption>
-    </figure>
-
-    <!-- Rodapé com contactos -->
+    
+   
+    
     <footer>
       <p>Contactos: Email: info@vilardemouros.com | Telefone: 1234-5678</p>
       <p>&copy; 2025 Festival Vilar de Mouros. Todos os direitos reservados.</p>
     </footer>
   </div>
+  <script src="script.js"></script>
 </body>
 </html>
