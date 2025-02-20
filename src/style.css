@@ -31,10 +31,13 @@ body {
   }
   
   header img#festivalPhoto {
-    width: 100%;
+    width: 400px;
     height: auto;
-    border-radius: 0 0 10px 10px;
-    margin-top: -10px;
+    border-radius: 10px 10px 10px 10px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    transition: opacity 1s;
+    
   }
   
   nav ul {
@@ -43,7 +46,7 @@ body {
     margin: 0;
     background: #ff6f61;
     overflow: hidden;
-    border-radius: 0 0 10px 10px;
+    border-radius: 0 0 0 0;
     display: flex;
     justify-content: center;
     gap: 20px;
@@ -85,7 +88,7 @@ body {
   }
   
   th {
-    background-color: #ff9472;
+    background-color: #ff6f61;
     color: #fff;
   }
   
