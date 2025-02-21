@@ -35,7 +35,7 @@ function updateDaysFields() {
 function validateComment() {
   var commentInput = document.getElementById("comentario");
   var commentMsg = document.getElementById("comentarioMsg");
-  var commentText = commentInput.value.toLowerCase();
+  var normalizedComment = commentInput.value.normalize("NFD").replace(/[\u0300-\u036f]/g, "").toLowerCase();
   
   // Lista de palavras proibidas
   var insults = [
@@ -63,19 +63,21 @@ function validateComment() {
   ];
   
   var isValid = true;
-  for (var i = 0; i < insults.length; i++) {
-    if (commentText.indexOf(insults[i]) !== -1) {
-      isValid = false;
-      break;
-    }
+for (var i = 0; i < insults.length; i++) {
+  // Normaliza as palavra proibidas para remover acentos e converter para minúsculas
+  var normalizedInsult = insults[i].normalize("NFD").replace(/[\u0300-\u036f]/g, "").toLowerCase();
+  if (normalizedComment.indexOf(normalizedInsult) !== -1) {
+    isValid = false;
+    break;
   }
+}
   
   if (isValid) {
     commentMsg.textContent = "comentário aceite";
   } else {
     commentMsg.textContent = "";
     commentInput.value = "";
-    alert("Comentário não aceite. Por favor, evite as palavras proibidas.");
+    alert("Comentário não aceite. Por favor, evite usar insultos.");
   }
 }
 
@@ -100,7 +102,7 @@ document.addEventListener("DOMContentLoaded", function() {
     setInterval(nextSlide, 3000); // Troca a cada 3 segundos
   }
   
-  // Efeito hover na foto do festival (na homepage)
+  // Efeito hover na foto do festival
   var festivalPhoto = document.getElementById("festivalPhoto");
   if (festivalPhoto) {
     festivalPhoto.addEventListener("mouseover", function() {
