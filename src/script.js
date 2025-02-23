@@ -1,22 +1,22 @@
 // Atualiza os grupos de data/hora conforme o valor do slider
 function updateDaysFields() {
-  var count = parseInt(document.getElementById("diasCount").value);
+  const count = parseInt(document.getElementById("diasCount").value);
   document.getElementById("sliderValue").textContent = count;
   
-  for (var i = 1; i <= 4; i++) {
-    var group = document.getElementById("group" + i);
+  for (let i = 1; i <= 4; i++) {
+    const group = document.getElementById("group" + i);
     if (i <= count) {
       group.style.display = "block";
       // Define os campos como obrigatórios
-      var dataInput = group.querySelector('select[id^="dias"]');
-      var timeInput = group.querySelector('input[list="horarios-list"]');
+      const dataInput = group.querySelector('select[id^="dias"]');
+      const timeInput = group.querySelector('input[list="horarios-list"]');
       if (dataInput) dataInput.required = true;
       if (timeInput) timeInput.required = true;
     } else {
       group.style.display = "none";
       // Remove a obrigatoriedade
-      var dataInput = group.querySelector('select[id^="dias"]');
-      var timeInput = group.querySelector('input[list="horarios-list"]');
+      const dataInput = group.querySelector('select[id^="dias"]');
+      const timeInput = group.querySelector('input[list="horarios-list"]');
       if (dataInput) dataInput.required = false;
       if (timeInput) timeInput.required = false;
     }
@@ -33,12 +33,12 @@ function updateDaysFields() {
 
 // Função para validar o comentário, proibindo as palavras especificadas
 function validateComment() {
-  var commentInput = document.getElementById("comentario");
-  var commentMsg = document.getElementById("comentarioMsg");
-  var normalizedComment = commentInput.value.normalize("NFD").replace(/[\u0300-\u036f]/g, "").toLowerCase();
+  const commentInput = document.getElementById("comentario");
+  const commentMsg = document.getElementById("comentarioMsg");
+  const normalizedComment = commentInput.value.normalize("NFD").replace(/[\u0300-\u036f]/g, "").toLowerCase();
   
   // Lista de palavras proibidas
-  var insults = [
+  const insults = [
     "abécula",
     "abentesma",
     "achavascado",
@@ -62,15 +62,15 @@ function validateComment() {
     "xexelento"
   ];
   
-  var isValid = true;
-for (var i = 0; i < insults.length; i++) {
-  // Normaliza as palavra proibidas para remover acentos e converter para minúsculas
-  var normalizedInsult = insults[i].normalize("NFD").replace(/[\u0300-\u036f]/g, "").toLowerCase();
-  if (normalizedComment.indexOf(normalizedInsult) !== -1) {
-    isValid = false;
-    break;
+  let isValid = true;
+  for (let i = 0; i < insults.length; i++) {
+    // Normaliza as palavra proibidas para remover acentos e converter para minúsculas
+    const normalizedInsult = insults[i].normalize("NFD").replace(/[\u0300-\u036f]/g, "").toLowerCase();
+    if (normalizedComment.indexOf(normalizedInsult) !== -1) {
+      isValid = false;
+      break;
+    }
   }
-}
   
   if (isValid) {
     commentMsg.textContent = "comentário aceite";
@@ -84,12 +84,12 @@ for (var i = 0; i < insults.length; i++) {
 // Slideshow e outros efeitos, executados quando o DOM estiver carregado
 document.addEventListener("DOMContentLoaded", function() {
   // Slideshow
-  var slideshow = document.getElementById("slideshow");
+  const slideshow = document.getElementById("slideshow");
   if (slideshow) {
-    var slides = slideshow.getElementsByTagName("img");
-    var slideIndex = 0;
+    const slides = slideshow.getElementsByTagName("img");
+    let slideIndex = 0;
     function showSlide(index) {
-      for (var i = 0; i < slides.length; i++) {
+      for (let i = 0; i < slides.length; i++) {
         slides[i].style.display = "none";
       }
       slides[index].style.display = "block";
@@ -103,7 +103,7 @@ document.addEventListener("DOMContentLoaded", function() {
   }
   
   // Efeito hover na foto do festival
-  var festivalPhoto = document.getElementById("festivalPhoto");
+  const festivalPhoto = document.getElementById("festivalPhoto");
   if (festivalPhoto) {
     festivalPhoto.addEventListener("mouseover", function() {
       festivalPhoto.style.opacity = "0";
