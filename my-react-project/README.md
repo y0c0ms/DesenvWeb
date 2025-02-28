@@ -1,70 +1,56 @@
-# Getting Started with Create React App
+# Festival Vilar de Mouros 2025
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Este projeto é um website para o Festival Vilar de Mouros 2025. O site foi desenvolvido como exercício de HTML, CSS e JavaScript, e possui as seguintes funcionalidades:
 
-## Available Scripts
+## Funcionalidades
 
-In the project directory, you can run:
+### Página Inicial (index.html)
 
-### `npm start`
+- **Layout Responsivo e Consistente:**  
+  Todas as páginas possuem um layout centralizado e estilizado de forma consistente, com um container principal que utiliza CSS para definir cores, margens, sombras e bordas arredondadas.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+- **Cabeçalho com Imagem:**  
+  O header inclui um título e uma imagem do festival.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+- **Efeito Hover:**  
+  A imagem do festival desaparece (através de um efeito de opacidade) quando o usuário passa o rato sobre ela, e reaparece quando o rato é retirado.
 
-### `npm test`
+- **Menu de Navegação Responsivo:**  
+  O menu de navegação foi estilizado para se apresentar como botões responsivos, com cores e transições semelhantes ao exemplo do W3Schools.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+- **Slideshow:**  
+  Um slideshow exibe uma sequência de imagens dos festivais anteriores (por exemplo, "multidao2022.png" e "rio2003.jpeg", além de outras imagens presentes na pasta `imgs`).  
+  As imagens alternam automaticamente a cada 3 segundos.
 
-### `npm run build`
+- **Conteúdo e Programação:**  
+  A página inclui seções sobre o festival, a programação (tabelas com horários e artistas para diferentes datas) e links para festivais recomendados.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+### Página de Candidatura a Voluntário (voluntario.html)
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+- **Formulário Dinâmico:**  
+  O formulário permite que o voluntário insira nome, contato e selecione quantos dias pode estar presente utilizando um slider.  
+  Conforme o valor do slider (de 1 a 4), os grupos de data/hora são exibidos dinamicamente.  
+  Se o valor máximo (4) for selecionado, os selects são automaticamente preenchidos com os dias fixos do festival (21, 22, 23 e 24).  
+  Os campos de data utilizam `<select>` para limitar as opções aos dias 21, 22, 23 e 24.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+- **Validação de Comentário:**  
+  O formulário inclui um campo para comentários com um botão **"Validar comentário"**.  
+  A função JavaScript `validateComment()` verifica se o comentário contém palavras proibidas.  
+  A verificação é **case-insensitive** e **accent-insensitive**, utilizando a normalização de texto (com `normalize("NFD")` e remoção de diacríticos).  
+  Caso o comentário contenha alguma das palavras proibidas (como "abécula", "abentesma", "achavascado", entre outras), o comentário é rejeitado, o campo é limpo e um alerta é exibido.
 
-### `npm run eject`
+### Página de Confirmação (aceite.html)
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+- **Mensagem de Aceitação:**  
+  Ao submeter o formulário de candidatura, o usuário é redirecionado para uma página que confirma que a candidatura foi aceita, com um botão para retornar à página inicial.
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+## Considerações
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+- **Imagens:**  
+  Certifique-se de que todas as imagens referenciadas (por exemplo, as imagens do slideshow e a imagem do festival) estão na pasta correta conforme os caminhos definidos no HTML.
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+- **Validação do Comentário:**  
+  A lista de palavras proibidas está configurada para rejeitar palavras específicas independentemente de variações de acentuação e maiúsculas/minúsculas.
 
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+- **Compatibilidade:**  
+  O site foi desenvolvido para funcionar em navegadores modernos que suportem as APIs de normalização de strings (`normalize()`) e outros recursos do JavaScript ES6+.
