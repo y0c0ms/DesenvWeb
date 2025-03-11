@@ -36,3 +36,89 @@
     transform: rotate(360deg);
   }
 }
+
+/* Estilos para os componentes de artistas */
+.programacao {
+  text-align: center;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.dia-programacao {
+  margin-bottom: 30px;
+}
+
+.artistas-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 20px;
+  justify-items: center;
+  margin: 20px auto;
+  max-width: 1200px;
+}
+
+.artista-card {
+  width: 100%;
+  max-width: 350px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 20px;
+  margin: 15px 0;
+  background-color: #f9f9f9;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
+  text-align: center;
+}
+
+.artista-card:hover {
+  transform: translateY(-5px);
+}
+
+.artista-imagem {
+  width: 100%;
+  max-height: 300px;
+  object-fit: cover;
+  border-radius: 5px;
+  margin: 10px 0;
+  cursor: pointer;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.artista-imagem:hover {
+  transform: scale(1.02);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.video-container {
+  position: relative;
+  padding-bottom: 56.25%; /* 16:9 Aspect Ratio */
+  height: 0;
+  overflow: hidden;
+  margin-top: 15px;
+}
+
+.video-container iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border-radius: 5px;
+}
+
+.programacao h2 {
+  color: #333;
+  border-bottom: 2px solid #f0f0f0;
+  padding-bottom: 10px;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.dia-programacao h3 {
+  background-color: #f0f0f0;
+  padding: 10px 20px;
+  border-radius: 5px;
+  display: inline-block;
+  margin: 20px 0;
+}
