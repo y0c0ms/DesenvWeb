@@ -5,7 +5,7 @@
     "imagem": "https://scontent.flis10-1.fna.fbcdn.net/v/t39.30808-6/474001106_122151397220343716_8070086578778566126_n.jpg?_nc_cat=102&ccb=1-7&_nc_sid=833d8c&_nc_ohc=MqGz-4_WMtIQ7kNvgHhfgst&_nc_zt=23&_nc_ht=scontent.flis10-1.fna&_nc_gid=Astv0qaSnyFtEsCQuQqdOAe&oh=00_AYGwXc-B-_QNF15HL2R209gsKp-J7LEpfBwt6-qpvQpfuQ&oe=67D780D4",
     "estilo": "Rock Português",
     "descricao": "Banda emergente do rock português com sonoridade única",
-    "urlVideo": "https://www.youtube.com/watch?v=Zs5Fr3kAiqI",
+    "urlVideo": "https://www.youtube.com/embed/Zs5Fr3kAiqI?si=0P20ec07o8p9okRu",
     "data": "21 de Agosto",
     "hora": "19:00"
   },
@@ -15,7 +15,7 @@
     "imagem": "https://asset-ng.skoiy.com/jnrcnjwljorqgsbu/dycjzgmasf2j.jpg?w=972&q=80&fm=webp& ",
     "estilo": "Rock Alternativo",
     "descricao": "Projeto musical que mistura rock alternativo com elementos eletrónicos",
-    "urlVideo": "https://www.youtube.com/watch?v=raYo6ujKhOo",
+    "urlVideo": "https://www.youtube.com/embed/raYo6ujKhOo?si=vwgj9frZE-KuuMqK&amp;start=6",
     "data": "21 de Agosto",
     "hora": "20:15"
   },
@@ -25,7 +25,7 @@
     "imagem": "https://imagens.publico.pt/imagens.aspx/911140?tp=UH&db=IMAGENS&type=JPG ",
     "estilo": "Rock",
     "descricao": "Banda lendária com um som único e poderoso",
-    "urlVideo": "https://www.youtube.com/watch?v=3uYd7G_8WqM",
+    "urlVideo": "https://www.youtube.com/embed/HXXpf_Mjg9o?si=jweXQf6SvRpt9d0E",
     "data": "21 de Agosto",
     "hora": "21:45"
   },
@@ -35,7 +35,7 @@
     "imagem": "https://rdpinternacional.rtp.pt/wp-content/uploads/2024/04/amalia-hoje-810x443-1.jpeg",
     "estilo": "Fado/Pop",
     "descricao": "Projeto que reinventa os clássicos de Amália Rodrigues",
-    "urlVideo": "https://www.youtube.com/watch?v=X9-wJG0xE4w",
+    "urlVideo": "https://www.youtube.com/embed/X9-wJG0xE4w?si=Xzey_DohHzgeuZJX",
     "data": "21 de Agosto",
     "hora": "23:15"
   },
@@ -45,158 +45,158 @@
     "imagem": "https://www.delfins.pt/imagens/share-img.jpg",
     "estilo": "Rock Português",
     "descricao": "Colaboração especial entre duas das maiores bandas do rock português",
-    "urlVideo": "https://www.youtube.com/watch?v=rtN30zpIBUE",
+    "urlVideo": "https://www.youtube.com/embed/rtN30zpIBUE?si=0IYERCn1BCmvPzQb",
     "data": "21 de Agosto",
     "hora": "01:00"
   },
   {
     "id": 6,
     "nome": "RAMP",
-    "imagem": "https://images.unsplash.com/photo-1493225457124-a3eb161ffa5f",
+    "imagem": "https://rampmetal.com/wp-content/uploads/2020/10/Live11.jpg",
     "estilo": "Metal",
     "descricao": "Banda de metal portuguesa com energia contagiante",
-    "urlVideo": "https://www.youtube.com/embed/videoseries?list=OLAK5uy_mQZGHI9fJWbFHkVRZX1_9fyL7WQ7XL3Zs",
+    "urlVideo": "https://www.youtube.com/embed/2xwT98B23MI?si=NEiUIWGfGZwUEnZN&amp;start=22",
     "data": "22 de Agosto",
-    "hora": "17:00"
+    "hora": "18:00"
   },
   {
     "id": 7,
     "nome": "MOONSPELL",
-    "imagem": "https://images.unsplash.com/photo-1516450360452-9312f5e86fc7",
+    "imagem": "https://www.rockpages.gr/wp-content/uploads/2022/11/MoonspellHeader.jpg",
     "estilo": "Metal Gótico",
     "descricao": "Maior banda portuguesa de metal gótico",
-    "urlVideo": "https://www.youtube.com/embed/XjB101k2Bog",
+    "urlVideo": "https://www.youtube.com/embed/1LH9qt2yXzU?si=jfV0o_OQF5UQ0wv8&amp;start=50",
     "data": "22 de Agosto",
-    "hora": "18:30"
+    "hora": "19:30"
   },
   {
     "id": 8,
     "nome": "SOULFLY",
-    "imagem": "https://images.unsplash.com/photo-1516450360452-9312f5e86fc7",
+    "imagem": "https://images.squarespace-cdn.com/content/v1/6093791d6ecc7b3a79d3f308/1651783829799-B4S071WW79HJUAP16VQP/SOULFLY_updated_2200w.jpg?format=2500w",
     "estilo": "Metal",
     "descricao": "Banda de metal liderada por Max Cavalera",
-    "urlVideo": "https://www.youtube.com/embed/u-OS9jjd4VM",
+    "urlVideo": "https://www.youtube.com/embed/Oa9Cjx-0tpA?si=stLL9b4oeo25yu8d",
     "data": "22 de Agosto",
-    "hora": "20:00"
+    "hora": "21:00"
   },
   {
     "id": 9,
     "nome": "XUTOS & PONTAPÉ",
-    "imagem": "https://images.unsplash.com/photo-1501612780327-45045538702b",
+    "imagem": "https://www.cm-arouca.pt/wp-content/uploads/2022/08/xutosepontapes.jpg",
     "estilo": "Rock",
     "descricao": "Lendária banda de rock português",
-    "urlVideo": "https://www.youtube.com/embed/PZtXWJGV8xo",
+    "urlVideo": "https://www.youtube.com/embed/Ta-RjADrNQs?si=iWWuZIDLpvR_OXxA&amp;start=155",
     "data": "22 de Agosto",
-    "hora": "21:30"
+    "hora": "22:30"
   },
   {
     "id": 10,
     "nome": "THE CULT",
-    "imagem": "https://images.unsplash.com/photo-1516450360452-9312f5e86fc7",
+    "imagem": "https://media.timeout.com/images/106013743/1920/1080/image.webp",
     "estilo": "Rock",
     "descricao": "Banda britânica de rock alternativo",
-    "urlVideo": "https://www.youtube.com/embed/ZCOSPtyZAPA",
+    "urlVideo": "https://www.youtube.com/embed/4zE3Ifgckw4?si=PvGa4Q6Xzl8sU1Pf&amp;start=230",
     "data": "22 de Agosto",
-    "hora": "23:00"
+    "hora": "00:15"
   },
   {
     "id": 11,
     "nome": "SULFUR GIANT",
-    "imagem": "https://images.unsplash.com/photo-1493225457124-a3eb161ffa5f",
+    "imagem": "https://f4.bcbits.com/img/0007750814_10.jpg",
     "estilo": "Metal",
     "descricao": "Banda de metal com influências do stoner rock",
-    "urlVideo": "https://www.youtube.com/embed/videoseries?list=OLAK5uy_mQZGHI9fJWbFHkVRZX1_9fyL7WQ7XL3Zs",
+    "urlVideo": "https://www.youtube.com/embed/Auj0kql-v_w?si=FC_L-QhUzQFSHHDa",
     "data": "23 de Agosto",
-    "hora": "17:00"
+    "hora": "18:30"
   },
   {
     "id": 12,
     "nome": "CAPITÃO FAUSTO",
-    "imagem": "https://images.unsplash.com/photo-1514525253161-7a46d19cd819",
+    "imagem": "https://cdn-p.smehost.net/sites/944353b54c5947218f12b0bb31a218dc/wp-content/uploads/2018/04/Capitao-Fausto-1-1800x900.jpg",
     "estilo": "Pop Rock",
     "descricao": "Uma das bandas mais criativas da nova geração do pop rock português",
-    "urlVideo": "https://www.youtube.com/embed/u7hJD8mBwOk",
+    "urlVideo": "https://www.youtube.com/embed/EEvosTzPCIQ?si=YcVsz-dCM_-nDCtN",
     "data": "23 de Agosto",
-    "hora": "18:30"
+    "hora": "19:45"
   },
   {
     "id": 13,
     "nome": "CRYSTAL FIGHTERS",
-    "imagem": "https://images.unsplash.com/photo-1514525253161-7a46d19cd819",
+    "imagem": "https://i.guim.co.uk/img/static/sys-images/Guardian/Pix/pictures/2011/3/28/1301332651045/Crystal-Fighters-005.jpg?width=620&dpr=2&s=none&crop=none",
     "estilo": "Electronic Folk",
     "descricao": "Banda que mistura música eletrônica com folk basco",
-    "urlVideo": "https://www.youtube.com/embed/ruakMoSvVsY",
+    "urlVideo": "https://www.youtube.com/embed/SRiNycp3plM?si=LMR1FxbSGstov-ay",
     "data": "23 de Agosto",
-    "hora": "20:00"
+    "hora": "21:15"
   },
   {
     "id": 14,
     "nome": "ORNATOS VIOLETA",
-    "imagem": "https://images.unsplash.com/photo-1493225457124-a3eb161ffa5f",
+    "imagem": "https://www.teatrodasfiguras.pt/util/imgLoader.ashx?w=870&img=/upload_files/client_id_1/website_id_4/Programacao/2022_11/Ornatos%20Violeta.jpg",
     "estilo": "Rock Alternativo",
     "descricao": "Banda icónica do rock alternativo português",
-    "urlVideo": "https://www.youtube.com/embed/Cg2tBgKcVV4",
+    "urlVideo": "https://www.youtube.com/embed/p114BzKac7M?si=vMNSQfnz-Vh9vq_s",
     "data": "23 de Agosto",
-    "hora": "21:30"
+    "hora": "22:45"
   },
   {
     "id": 15,
     "nome": "DIE ANTWOORD",
-    "imagem": "https://images.unsplash.com/photo-1516450360452-9312f5e86fc7",
+    "imagem": "https://br.in-edit.org/wp-content/uploads/2024/05/ZEF.jpg",
     "estilo": "Hip Hop/Rave",
     "descricao": "Grupo sul-africano de rap-rave",
-    "urlVideo": "https://www.youtube.com/embed/8Uee_mcxvrw",
+    "urlVideo": "https://www.youtube.com/embed/WEc5f0SVna8?si=i6r2tOEyOV_Ak936",
     "data": "23 de Agosto",
-    "hora": "23:00"
+    "hora": "00:30"
   },
   {
     "id": 16,
     "nome": "VAPORS OF MORPHINE",
-    "imagem": "https://images.unsplash.com/photo-1493225457124-a3eb161ffa5f",
+    "imagem": "https://www.bostonherald.com/wp-content/uploads/2021/09/Vapors-of-Morphine-PressPic1.jpg?w=1280",
     "estilo": "Blues Rock",
     "descricao": "Banda que continua o legado dos Morphine",
-    "urlVideo": "https://www.youtube.com/embed/videoseries?list=OLAK5uy_mQZGHI9fJWbFHkVRZX1_9fyL7WQ7XL3Zs",
-    "data": "24 de Agosto",
-    "hora": "17:00"
-  },
-  {
-    "id": 17,
-    "nome": "DAVID FONSECA",
-    "imagem": "https://images.unsplash.com/photo-1514525253161-7a46d19cd819",
-    "estilo": "Pop Rock",
-    "descricao": "Um dos artistas mais versáteis da música portuguesa",
-    "urlVideo": "https://www.youtube.com/embed/videoseries?list=OLAK5uy_mQZGHI9fJWbFHkVRZX1_9fyL7WQ7XL3Zs",
+    "urlVideo": "https://www.youtube.com/embed/mL4VyLdk8OI?si=xMUmPy9_OQQKCLKR",
     "data": "24 de Agosto",
     "hora": "18:30"
   },
   {
+    "id": 17,
+    "nome": "DAVID FONSECA",
+    "imagem": "https://images.impresa.pt/expresso/2022-09-28-DAVID_FONSECA_LRBA_2.jpg-0df4a180/3x2/mw-694",
+    "estilo": "Pop Rock",
+    "descricao": "Um dos artistas mais versáteis da música portuguesa",
+    "urlVideo": "https://www.youtube.com/embed/qoH0fm-3Cwc?si=YSAPRBfMOecGa2nF",
+    "data": "24 de Agosto",
+    "hora": "19:45"
+  },
+  {
     "id": 18,
     "nome": "THE WATERBOYS",
-    "imagem": "https://images.unsplash.com/photo-1493225457124-a3eb161ffa5f",
+    "imagem": "https://ymlp.com/https.php?id=mikescottwaterboys.com/images/news/Quay_Sessions1.jpg",
     "estilo": "Folk Rock",
     "descricao": "Banda escocesa de folk rock",
-    "urlVideo": "https://www.youtube.com/embed/videoseries?list=OLAK5uy_mQZGHI9fJWbFHkVRZX1_9fyL7WQ7XL3Zs",
+    "urlVideo": "https://www.youtube.com/embed/hJ53zFSimMc?si=JqgrbDXQO_8s212U",
     "data": "24 de Agosto",
-    "hora": "20:00"
+    "hora": "21:15"
   },
   {
     "id": 19,
     "nome": "THE LIBERTINES",
-    "imagem": "https://images.unsplash.com/photo-1516450360452-9312f5e86fc7",
+    "imagem": "https://www.festivalvilardemouros.pt/wp-content/uploads/2023/06/The-Libertines-Portugal.jpg",
     "estilo": "Rock",
     "descricao": "Banda britânica de rock alternativo",
-    "urlVideo": "https://www.youtube.com/embed/videoseries?list=OLAK5uy_mQZGHI9fJWbFHkVRZX1_9fyL7WQ7XL3Zs",
+    "urlVideo": "https://www.youtube.com/embed/afe1CcuQ2y0?si=xrrQC2x-LLVbPcHH",
     "data": "24 de Agosto",
-    "hora": "21:30"
+    "hora": "23:00"
   },
   {
     "id": 20,
     "nome": "THE DARKNESS",
-    "imagem": "https://images.unsplash.com/photo-1516450360452-9312f5e86fc7",
+    "imagem": "https://rollingstone.com.br/media/_versions/legacy/2012/img-1009444-darkness_widelg.jpg",
     "estilo": "Hard Rock",
     "descricao": "Banda britânica de hard rock",
-    "urlVideo": "https://www.youtube.com/embed/tKjZuykKY1I",
+    "urlVideo": "https://www.youtube.com/embed/kbIk6avqCQw?si=UgDPSti0wc17z53a",
     "data": "24 de Agosto",
-    "hora": "23:00"
+    "hora": "00:45"
   }
 ] 
