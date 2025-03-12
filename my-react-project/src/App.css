@@ -77,8 +77,8 @@
 
 .artista-imagem {
   width: 300px; 
-  height: 300px;
-  object-fit: fill ;  /* Mantém a proporção da imagem e corta o excesso */
+  height: 300px; 
+  object-fit: cover;  /* Mantém a proporção da imagem e corta o excesso */
   border-radius: 5px;
   margin: 10px 0;
   cursor: pointer;
