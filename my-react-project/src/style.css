@@ -145,4 +145,9 @@ body {
   section ul li a:hover {
     background-color: #ff9472;
   }
-  
+
+  .img-resize {
+    width: 200px; /* Defina a largura desejada */
+    height: 200px; /* Defina a altura desejada */
+    object-fit: cover; /* Mantém a proporção da imagem e corta o excesso */
+  }
