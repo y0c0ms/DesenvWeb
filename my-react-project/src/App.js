@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import './App.css';
 import './style.css';
 
@@ -35,19 +35,19 @@ function MainContent() {
   );
 }
 
-function App() {
-  const [photoOpacity, setPhotoOpacity] = useState(1);
-
-  return (
-    <div className="container">
-      <Header photoOpacity={photoOpacity} setPhotoOpacity={setPhotoOpacity} />
-      <Navigation />
-      <Slideshow images={imagens} />
-      <MainContent />
-      <AsideNoticias />
-      <Footer />
-    </div>
-  );
+class App extends React.Component {
+  render() {
+    return (
+      <div className="container">
+        <Header />
+        <Navigation />
+        <Slideshow images={imagens} />
+        <MainContent />
+        <AsideNoticias />
+        <Footer />
+      </div>
+    );
+  }
 }
 
 export default App;

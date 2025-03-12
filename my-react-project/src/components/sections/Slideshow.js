@@ -1,30 +1,42 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 
-function Slideshow({ images }) {
-  const [slideIndex, setSlideIndex] = useState(0);
+class Slideshow extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      slideIndex: 0
+    };
+  }
 
-  useEffect(() => {
-    const interval = setInterval(() => {
-      setSlideIndex((prevIndex) => (prevIndex + 1) % images.length);
+  componentDidMount() {
+    this.interval = setInterval(() => {
+      this.setState(prevState => ({
+        slideIndex: (prevState.slideIndex + 1) % this.props.images.length
+      }));
     }, 3000);
-    return () => clearInterval(interval);
-  }, [images]);
+  }
 
-  return (
-    <div id="slideshow">
-      {images.map((src, i) => (
-        <img
-          key={i}
-          src={src}
-          alt={`Slide ${i + 1}`}
-          style={{
-            display: i === slideIndex ? "block" : "none",
-            width: "100%",
-          }}
-        />
-      ))}
-    </div>
-  );
+  componentWillUnmount() {
+    clearInterval(this.interval);
+  }
+
+  render() {
+    return (
+      <div id="slideshow">
+        {this.props.images.map((src, i) => (
+          <img
+            key={i}
+            src={src}
+            alt={`Slide ${i + 1}`}
+            style={{
+              display: i === this.state.slideIndex ? "block" : "none",
+              width: "100%",
+            }}
+          />
+        ))}
+      </div>
+    );
+  }
 }
 
 export default Slideshow; 
