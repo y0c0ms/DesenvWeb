@@ -3,14 +3,14 @@ import './App.css';
 import './style.css';
 
 // Image imports
-import img1 from "./imgs/1920x1080_1.jpg";
-import img2 from "./imgs/1920x1080_2.jpg";
-import img3 from "./imgs/1920x1080_3.jpg";
-import img4 from "./imgs/1920x1080_4.jpg";
-import img5 from "./imgs/1920x1080_5.jpg";
-import img6 from "./imgs/1920x1080_6.jpg";
-import img7 from "./imgs/1920x1080_7.jpg";
-import img8 from "./imgs/1920x1080_8.jpg";
+import img1 from "./imgs/fotoFestival1.jpg";
+import img2 from "./imgs/fotoFestival2.jpg";
+import img3 from "./imgs/fotoFestival3.jpg";
+import img4 from "./imgs/fotoFestival4.jpg";
+import img5 from "./imgs/fotoFestival5.jpg";
+import img6 from "./imgs/fotoFestival6.jpg";
+import img7 from "./imgs/fotoFestival7.jpg";
+import img8 from "./imgs/fotoFestival8.jpg";
 
 // Component imports
 import Header from './components/layout/Header';

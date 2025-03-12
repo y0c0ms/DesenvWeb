@@ -2,52 +2,52 @@
   {
     "id": 1,
     "nome": "FOGO FRIO",
-    "imagem": "https://images.unsplash.com/photo-1511671782779-c97d3d27a1d4",
+    "imagem": "https://scontent.flis10-1.fna.fbcdn.net/v/t39.30808-6/474001106_122151397220343716_8070086578778566126_n.jpg?_nc_cat=102&ccb=1-7&_nc_sid=833d8c&_nc_ohc=MqGz-4_WMtIQ7kNvgHhfgst&_nc_zt=23&_nc_ht=scontent.flis10-1.fna&_nc_gid=Astv0qaSnyFtEsCQuQqdOAe&oh=00_AYGwXc-B-_QNF15HL2R209gsKp-J7LEpfBwt6-qpvQpfuQ&oe=67D780D4",
     "estilo": "Rock Português",
     "descricao": "Banda emergente do rock português com sonoridade única",
-    "urlVideo": "https://www.youtube.com/embed/videoseries?list=OLAK5uy_mQZGHI9fJWbFHkVRZX1_9fyL7WQ7XL3Zs",
+    "urlVideo": "https://www.youtube.com/watch?v=Zs5Fr3kAiqI",
     "data": "21 de Agosto",
-    "hora": "17:00"
+    "hora": "19:00"
   },
   {
     "id": 2,
-    "nome": "TIGERMAN",
-    "imagem": "https://images.unsplash.com/photo-1493225457124-a3eb161ffa5f",
+    "nome": "THE LEGENDARY TIGERMAN",
+    "imagem": "https://asset-ng.skoiy.com/jnrcnjwljorqgsbu/dycjzgmasf2j.jpg?w=972&q=80&fm=webp& ",
     "estilo": "Rock Alternativo",
     "descricao": "Projeto musical que mistura rock alternativo com elementos eletrónicos",
-    "urlVideo": "https://www.youtube.com/embed/videoseries?list=OLAK5uy_mhM8_X-zyKCuVnlQ9UgL7HhM0V0q5YwYY",
+    "urlVideo": "https://www.youtube.com/watch?v=raYo6ujKhOo",
     "data": "21 de Agosto",
-    "hora": "18:30"
+    "hora": "20:15"
   },
   {
     "id": 3,
-    "nome": "THE LEGENDARY",
-    "imagem": "https://images.unsplash.com/photo-1493225457124-a3eb161ffa5f",
+    "nome": "GNR",
+    "imagem": "https://imagens.publico.pt/imagens.aspx/911140?tp=UH&db=IMAGENS&type=JPG ",
     "estilo": "Rock",
     "descricao": "Banda lendária com um som único e poderoso",
-    "urlVideo": "https://www.youtube.com/embed/videoseries?list=OLAK5uy_mQZGHI9fJWbFHkVRZX1_9fyL7WQ7XL3Zs",
+    "urlVideo": "https://www.youtube.com/watch?v=3uYd7G_8WqM",
     "data": "21 de Agosto",
-    "hora": "20:00"
+    "hora": "21:45"
   },
   {
     "id": 4,
-    "nome": "DELFINS - GNR",
-    "imagem": "https://images.unsplash.com/photo-1501612780327-45045538702b",
-    "estilo": "Rock Português",
-    "descricao": "Colaboração especial entre duas das maiores bandas do rock português",
-    "urlVideo": "https://www.youtube.com/embed/videoseries?list=OLAK5uy_kBmG8VuXTQPXGwXfrLhqVKxF8ZKk8WJ1Q",
+    "nome": "AMÁLIA HOJE",
+    "imagem": "https://rdpinternacional.rtp.pt/wp-content/uploads/2024/04/amalia-hoje-810x443-1.jpeg",
+    "estilo": "Fado/Pop",
+    "descricao": "Projeto que reinventa os clássicos de Amália Rodrigues",
+    "urlVideo": "https://www.youtube.com/watch?v=X9-wJG0xE4w",
     "data": "21 de Agosto",
-    "hora": "21:30"
+    "hora": "23:15"
   },
   {
     "id": 5,
-    "nome": "AMÁLIA HOJE",
-    "imagem": "https://images.unsplash.com/photo-1514525253161-7a46d19cd819",
-    "estilo": "Fado/Pop",
-    "descricao": "Projeto que reinventa os clássicos de Amália Rodrigues",
-    "urlVideo": "https://www.youtube.com/embed/videoseries?list=OLAK5uy_mQZGHI9fJWbFHkVRZX1_9fyL7WQ7XL3Zs",
+    "nome": "DELFINS",
+    "imagem": "https://www.delfins.pt/imagens/share-img.jpg",
+    "estilo": "Rock Português",
+    "descricao": "Colaboração especial entre duas das maiores bandas do rock português",
+    "urlVideo": "https://www.youtube.com/watch?v=rtN30zpIBUE",
     "data": "21 de Agosto",
-    "hora": "23:00"
+    "hora": "01:00"
   },
   {
     "id": 6,
