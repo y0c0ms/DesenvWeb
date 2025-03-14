@@ -1,0 +1,128 @@
+/* Volunteer Form Styles */
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background: linear-gradient(135deg, #ffecd2, #fcb69f);
+  color: #333;
+}
+
+.container {
+  width: 80%;
+  max-width: 1200px;
+  margin: 0 auto;
+  text-align: center;
+  background: #fff;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+header {
+  position: relative;
+}
+
+header h1 {
+  margin: 0;
+  padding: 10px;
+  font-size: 3em;
+  background: #ff6f61;
+  color: #fff;
+  border-radius: 10px 10px 0 0;
+  z-index: 1;
+}
+
+nav ul {
+  list-style: none;
+  padding: 0;
+  margin-top: -4px;
+  background: #ff6f61;
+  overflow: hidden;
+  border-radius: 0 0 0 0;
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+}
+
+nav ul li {
+  display: inline-block;
+}
+
+nav ul li a {
+  display: block;
+  padding: 14px 20px;
+  text-decoration: none;
+  color: #fff;
+  transition: background-color 0.3s ease;
+  border-radius: 5px;
+}
+
+nav ul li a:hover {
+  background-color: #ff9472;
+}
+
+article h2, h3 {
+  color: #ff6f61;
+}
+
+footer {
+  background: #ff6f61;
+  color: #fff;
+  padding: 10px;
+  margin-top: 20px;
+  border-radius: 0 0 10px 10px;
+}
+
+/* Form specific styles */
+form {
+  width: 80%;
+  margin: 0 auto;
+  text-align: left;
+  background: #ffefd5;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+label {
+  font-weight: bold;
+  display: block;
+  margin-bottom: 5px;
+}
+
+input, select, textarea {
+  width: 100%;
+  padding: 8px;
+  margin-bottom: 15px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+
+button {
+  background-color: #ff6f61;
+  color: white;
+  padding: 10px 15px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 16px;
+  transition: background-color 0.3s ease;
+}
+
+button:hover {
+  background-color: #ff9472;
+}
+
+#comentarioMsg {
+  color: green;
+  margin-left: 10px;
+  font-style: italic;
+}
+
+.dayGroup {
+  background-color: #fff;
+  padding: 15px;
+  margin-bottom: 15px;
+  border-radius: 5px;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+} 

@@ -8,25 +8,35 @@ function Artista({ nome, imagem, estilo, descricao, urlVideo, data, hora }) {
     if (videoContainer) {
       if (videoContainer.style.display === 'none' || videoContainer.style.display === '') {
         videoContainer.style.display = 'block';
+        artistaCard.classList.add('video-expanded');
+        
+        // Scroll para o vídeo com uma pequena animação
+        setTimeout(() => {
+          videoContainer.scrollIntoView({ behavior: 'smooth', block: 'center' });
+        }, 100);
       } else {
         videoContainer.style.display = 'none';
+        artistaCard.classList.remove('video-expanded');
       }
     }
   };
 
   return (
     <div className="artista-card">
-      <h3>{nome}</h3>
-      <p>Atuação: {data} às {hora}</p>
-      <img 
-        src={imagem} 
-        alt={`Foto de ${nome}`} 
-        className="artista-imagem" 
-        onClick={toggleVideo}
-        style={{ cursor: 'pointer' }}
-      />
-      <p>Estilo musical: {estilo}</p>
-      <p>{descricao}</p>
+      <div className="artista-info">
+        <h3>{nome}</h3>
+        <p>Atuação: {data} às {hora}</p>
+        <div className="artista-imagem-container">
+          <img 
+            src={imagem} 
+            alt={`Foto de ${nome}`} 
+            className="artista-imagem" 
+            onClick={toggleVideo}
+          />
+        </div>
+        <p>Estilo musical: {estilo}</p>
+        <p className="artista-descricao">{descricao}</p>
+      </div>
       {urlVideo && (
         <div className="video-container" style={{ display: 'none' }}>
           <iframe

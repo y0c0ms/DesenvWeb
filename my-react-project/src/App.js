@@ -1,8 +1,8 @@
 import React from 'react';
 import './App.css';
-import './style.css';
+import './style.css'; // Main site styling
 
-// Image imports
+// Image imports - organized in an array for better maintainability
 import img1 from "./imgs/fotoFestival1.jpg";
 import img2 from "./imgs/fotoFestival2.jpg";
 import img3 from "./imgs/fotoFestival3.jpg";
@@ -12,19 +12,26 @@ import img6 from "./imgs/fotoFestival6.jpg";
 import img7 from "./imgs/fotoFestival7.jpg";
 import img8 from "./imgs/fotoFestival8.jpg";
 
-// Component imports
+// Component imports - grouped by type
 import Header from './components/layout/Header';
 import Navigation from './components/layout/Navigation';
+import Footer from './components/layout/Footer';
+import AsideNoticias from './components/layout/AsideNoticias';
+
 import Slideshow from './components/sections/Slideshow';
 import SectionSobreFestival from './components/sections/SectionSobreFestival';
-import Programacao from './components/Programacao';
 import SectionFestivaisRecomendados from './components/sections/SectionFestivaisRecomendados';
-import AsideNoticias from './components/layout/AsideNoticias';
-import Footer from './components/layout/Footer';
 
-const imagens = [img1, img2, img3, img4, img5, img6, img7, img8];
+import Programacao from './components/Programacao';
 
-// Main Content component
+/**
+ * Festival images array
+ */
+const festivalImages = [img1, img2, img3, img4, img5, img6, img7, img8];
+
+/**
+ * MainContent component that encapsulates the main sections of the page
+ */
 function MainContent() {
   return (
     <article>
@@ -35,19 +42,20 @@ function MainContent() {
   );
 }
 
-class App extends React.Component {
-  render() {
-    return (
-      <div className="container">
-        <Header />
-        <Navigation />
-        <Slideshow images={imagens} />
-        <MainContent />
-        <AsideNoticias />
-        <Footer />
-      </div>
-    );
-  }
+/**
+ * Main App component that renders the entire application
+ */
+function App() {
+  return (
+    <div className="container">
+      <Header />
+      <Navigation />
+      <Slideshow images={festivalImages} />
+      <MainContent />
+      <AsideNoticias />
+      <Footer />
+    </div>
+  );
 }
 
 export default App;
