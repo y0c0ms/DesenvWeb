@@ -3,8 +3,67 @@
 <head>
   <meta charset="UTF-8">
   <title>Candidatura a Voluntário - Festival Vilar de Mouros 2025</title>
+  <link rel="stylesheet" href="css/style.css">
   <link rel="stylesheet" href="css/voluntario.css">
-  <script src="js/voluntario.js"></script>
+  <style>
+    /* Day selection buttons grid */
+    .day-buttons {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 10px;
+      margin-bottom: 20px;
+    }
+    
+    .day-button {
+      padding: 10px;
+      background-color: #f0f0f0;
+      border: 1px solid #ddd;
+      border-radius: 4px;
+      cursor: pointer;
+      text-align: center;
+      transition: background-color 0.3s, transform 0.2s;
+    }
+    
+    .day-button:hover {
+      background-color: #e0e0e0;
+      transform: translateY(-2px);
+    }
+    
+    .day-button.active {
+      background-color: #ff6f61;
+      color: white;
+      border-color: #ff6f61;
+    }
+    
+    /* Time selection buttons */
+    .horario-buttons {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 10px;
+      margin-bottom: 15px;
+    }
+    
+    .horario-button {
+      padding: 8px;
+      background-color: #f0f0f0;
+      border: 1px solid #ddd;
+      border-radius: 4px;
+      cursor: pointer;
+      text-align: center;
+      transition: background-color 0.3s;
+      font-size: 0.9em;
+    }
+    
+    .horario-button:hover {
+      background-color: #e0e0e0;
+    }
+    
+    .horario-button.active {
+      background-color: #ff6f61;
+      color: white;
+      border-color: #ff6f61;
+    }
+  </style>
 </head>
 <body>
   <div class="container">
@@ -13,8 +72,8 @@
     </header>
     <nav>
       <ul>
-        <li><a href="/">Início</a></li>
-        <li><a href="/voluntario.html">Candidatura a Voluntário</a></li>
+        <li><a href="index.html">Início</a></li>
+        <li><a href="voluntario.html">Candidatura a Voluntário</a></li>
       </ul>
     </nav>
     <article>
@@ -29,14 +88,19 @@
             <label for="contacto">Contacto:</label>
             <input type="tel" id="contact" name="contact" pattern="[0-9]+" required>
           </p>
-          <!-- Slider para indicar número de dias -->
+          
+          <!-- Day selection buttons -->
           <p>
-            <label for="diasCount">
-              Quantos dias você pode estar presente:
-              <span id="sliderValue">1</span>
-            </label>
-            <input type="range" id="diasCount" name="diasCount" min="1" max="4" value="1" oninput="updateDaysFields()">
+            <label>Selecione os dias que você pode estar presente:</label>
+            <input type="hidden" id="diasCount" name="diasCount" value="1">
           </p>
+          <div class="day-buttons">
+            <div class="day-button active" data-day="1" onclick="selectDay(1)">1 Dia</div>
+            <div class="day-button" data-day="2" onclick="selectDay(2)">2 Dias</div>
+            <div class="day-button" data-day="3" onclick="selectDay(3)">3 Dias</div>
+            <div class="day-button" data-day="4" onclick="selectDay(4)">4 Dias</div>
+          </div>
+          
           <!-- Grupos de data/hora -->
           <div id="daysContainer">
             <div class="dayGroup" id="group1">
@@ -51,8 +115,13 @@
                 </select>
               </p>
               <p>
-                <label for="horario1">Horário 1:</label>
-                <input list="horarios-list" id="horario1" name="horario1" required>
+                <label>Horário 1:</label>
+                <input type="hidden" id="horario1" name="horario1" value="" required>
+                <div class="horario-buttons" data-group="1">
+                  <div class="horario-button" data-value="O dia todo" onclick="selectHorario(1, 'O dia todo')">O dia todo</div>
+                  <div class="horario-button" data-value="Tarde" onclick="selectHorario(1, 'Tarde')">Tarde</div>
+                  <div class="horario-button" data-value="Noite" onclick="selectHorario(1, 'Noite')">Noite</div>
+                </div>
               </p>
             </div>
             <div class="dayGroup" id="group2" style="display: none;">
@@ -67,8 +136,13 @@
                 </select>
               </p>
               <p>
-                <label for="horario2">Horário 2:</label>
-                <input list="horarios-list" id="horario2" name="horario2">
+                <label>Horário 2:</label>
+                <input type="hidden" id="horario2" name="horario2" value="">
+                <div class="horario-buttons" data-group="2">
+                  <div class="horario-button" data-value="O dia todo" onclick="selectHorario(2, 'O dia todo')">O dia todo</div>
+                  <div class="horario-button" data-value="Tarde" onclick="selectHorario(2, 'Tarde')">Tarde</div>
+                  <div class="horario-button" data-value="Noite" onclick="selectHorario(2, 'Noite')">Noite</div>
+                </div>
               </p>
             </div>
             <div class="dayGroup" id="group3" style="display: none;">
@@ -83,8 +157,13 @@
                 </select>
               </p>
               <p>
-                <label for="horario3">Horário 3:</label>
-                <input list="horarios-list" id="horario3" name="horario3">
+                <label>Horário 3:</label>
+                <input type="hidden" id="horario3" name="horario3" value="">
+                <div class="horario-buttons" data-group="3">
+                  <div class="horario-button" data-value="O dia todo" onclick="selectHorario(3, 'O dia todo')">O dia todo</div>
+                  <div class="horario-button" data-value="Tarde" onclick="selectHorario(3, 'Tarde')">Tarde</div>
+                  <div class="horario-button" data-value="Noite" onclick="selectHorario(3, 'Noite')">Noite</div>
+                </div>
               </p>
             </div>
             <div class="dayGroup" id="group4" style="display: none;">
@@ -99,25 +178,25 @@
                 </select>
               </p>
               <p>
-                <label for="horario4">Horário 4:</label>
-                <input list="horarios-list" id="horario4" name="horario4">
+                <label>Horário 4:</label>
+                <input type="hidden" id="horario4" name="horario4" value="">
+                <div class="horario-buttons" data-group="4">
+                  <div class="horario-button" data-value="O dia todo" onclick="selectHorario(4, 'O dia todo')">O dia todo</div>
+                  <div class="horario-button" data-value="Tarde" onclick="selectHorario(4, 'Tarde')">Tarde</div>
+                  <div class="horario-button" data-value="Noite" onclick="selectHorario(4, 'Noite')">Noite</div>
+                </div>
               </p>
             </div>
           </div>
-          <!-- Datalist para horários -->
-          <datalist id="horarios-list">
-            <option value="O dia todo">
-            <option value="Tarde">
-            <option value="Noite">
-          </datalist>
+          
           <!-- Campo de comentário com botão de validação -->
-            <p>
+          <p>
             <label for="comentario">Comentário:</label>
             <textarea id="comentario" name="comentario" rows="4" cols="50"></textarea>
             <button type="button" onclick="validateComment()">Validar comentário</button>
             <span id="comentarioMsg"></span>
-            </p>
-            <p>
+          </p>
+          <p>
             <button type="submit">Submeter Candidatura</button>
           </p>
         </form>
@@ -128,6 +207,126 @@
       <p>&copy; 2025 Festival Vilar de Mouros. Todos os direitos reservados.</p>
     </footer>
   </div>
-  <script src="js/voluntario.js"></script>
+  <script>
+    // Function to select the number of days
+    function selectDay(days) {
+      // Update hidden input
+      document.getElementById("diasCount").value = days;
+      
+      // Update button styles
+      const buttons = document.querySelectorAll('.day-button');
+      buttons.forEach(button => {
+        if (parseInt(button.getAttribute('data-day')) === days) {
+          button.classList.add('active');
+        } else {
+          button.classList.remove('active');
+        }
+      });
+      
+      // Show/hide day groups
+      for (let i = 1; i <= 4; i++) {
+        const group = document.getElementById("group" + i);
+        if (!group) continue;
+        
+        if (i <= days) {
+          group.style.display = "block";
+          // Make fields required
+          const dataInput = group.querySelector('select[id^="dias"]');
+          const timeInput = group.querySelector('input[id^="horario"]');
+          if (dataInput) dataInput.required = true;
+          if (timeInput) timeInput.required = true;
+        } else {
+          group.style.display = "none";
+          // Remove required attribute
+          const dataInput = group.querySelector('select[id^="dias"]');
+          const timeInput = group.querySelector('input[id^="horario"]');
+          if (dataInput) dataInput.required = false;
+          if (timeInput) timeInput.required = false;
+        }
+      }
+      
+      // If maximum number of days (4) is selected, auto-fill the dates
+      if (days === 4) {
+        document.getElementById("dias1").value = "21";
+        document.getElementById("dias2").value = "22";
+        document.getElementById("dias3").value = "23";
+        document.getElementById("dias4").value = "24";
+      }
+    }
+    
+    // Function to select time slot
+    function selectHorario(group, value) {
+      // Update hidden input
+      const inputElement = document.getElementById("horario" + group);
+      inputElement.value = value;
+      
+      // Update button styles
+      const buttons = document.querySelectorAll(`.horario-buttons[data-group="${group}"] .horario-button`);
+      buttons.forEach(button => {
+        if (button.getAttribute('data-value') === value) {
+          button.classList.add('active');
+        } else {
+          button.classList.remove('active');
+        }
+      });
+    }
+    
+    // List of prohibited words
+    const PROHIBITED_WORDS = [
+      "abécula", "abentesma", "achavascado", "alimária", "andrajoso",
+      "barregã", "biltre", "cacóstomo", "cuarra", "estólido",
+      "estroso", "estultilóquio", "nefelibata", "néscio", "pechenga",
+      "sevandija", "somítico", "tatibitate", "xexé", "cheché", "xexelento"
+    ];
+    
+    // Function to validate comment, prohibiting specified words
+    function validateComment() {
+      const commentInput = document.getElementById("comentario");
+      const commentMsg = document.getElementById("comentarioMsg");
+      
+      if (!commentInput || !commentMsg) return;
+      
+      const normalizedComment = commentInput.value
+        .normalize("NFD")
+        .replace(/[\u0300-\u036f]/g, "")
+        .toLowerCase();
+      
+      let isValid = !PROHIBITED_WORDS.some(word => {
+        const normalizedWord = word
+          .normalize("NFD")
+          .replace(/[\u0300-\u036f]/g, "")
+          .toLowerCase();
+        return normalizedComment.includes(normalizedWord);
+      });
+      
+      if (isValid) {
+        commentMsg.textContent = "comentário aceite";
+      } else {
+        commentMsg.textContent = "";
+        commentInput.value = "";
+        alert("Comentário não aceite. Por favor, evite usar insultos.");
+      }
+    }
+    
+    // Initialize when the page loads
+    document.addEventListener("DOMContentLoaded", function() {
+      // Initialize with 1 day selected
+      selectDay(1);
+      
+      // Select default time for first day
+      selectHorario(1, 'O dia todo');
+      
+      // Add real-time validation listener
+      const commentInput = document.getElementById("comentario");
+      if (commentInput) {
+        commentInput.addEventListener("blur", function() {
+          const validateBtn = document.querySelector('button[onclick="validateComment()"]');
+          if (validateBtn && commentInput.value.trim()) {
+            validateComment();
+          }
+        });
+      }
+    });
+  </script>
 </body>
 </html> 
