@@ -1,4 +1,5 @@
-import React from 'react';
+import React, { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import './App.css';
 import './style.css'; // Main site styling
 
@@ -17,11 +18,7 @@ import Header from './components/layout/Header';
 import Navigation from './components/layout/Navigation';
 import Footer from './components/layout/Footer';
 import AsideNoticias from './components/layout/AsideNoticias';
-
 import Slideshow from './components/sections/Slideshow';
-import SectionSobreFestival from './components/sections/SectionSobreFestival';
-import SectionFestivaisRecomendados from './components/sections/SectionFestivaisRecomendados';
-
 import Programacao from './components/Programacao';
 
 /**
@@ -30,30 +27,53 @@ import Programacao from './components/Programacao';
 const festivalImages = [img1, img2, img3, img4, img5, img6, img7, img8];
 
 /**
- * MainContent component that encapsulates the main sections of the page
- */
-function MainContent() {
-  return (
-    <article>
-      <SectionSobreFestival />
-      <Programacao />
-      <SectionFestivaisRecomendados />
-    </article>
-  );
-}
-
-/**
  * Main App component that renders the entire application
  */
 function App() {
+  const navigate = useNavigate();
+  const [showAuthors, setShowAuthors] = useState(false);
+  
+  // Toggle para mostrar autores no footer
+  const toggleFooter = () => {
+    setShowAuthors(!showAuthors);
+  };
+  
   return (
     <div className="container">
       <Header />
       <Navigation />
       <Slideshow images={festivalImages} />
-      <MainContent />
-      <AsideNoticias />
-      <Footer />
+      
+      <div className="content-area">
+        <main>
+          <h2>Programação do Festival</h2>
+          <Programacao />
+          
+          <div className="volunteer-button-container">
+            <button 
+              className="volunteer-button"
+              onClick={() => navigate('/voluntario')}
+            >
+              Inscreva-se como Voluntário
+            </button>
+          </div>
+        </main>
+        
+        <AsideNoticias />
+      </div>
+      
+      <div className="footer-wrapper" onClick={toggleFooter}>
+        {showAuthors ? (
+          <div className="authors">
+            <h3>Autores do Site</h3>
+            <p>João Silva - Desenvolvimento Frontend</p>
+            <p>Maria Santos - Design UI/UX</p>
+            <p>Carlos Oliveira - Desenvolvimento Backend</p>
+          </div>
+        ) : (
+          <Footer />
+        )}
+      </div>
     </div>
   );
 }

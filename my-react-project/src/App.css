@@ -46,80 +46,130 @@
 }
 
 .dia-programacao {
-  margin-bottom: 30px;
+  margin-bottom: 40px;
+  background-color: #f9f9f9;
+  border-radius: 12px;
+  padding: 20px;
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.05);
+}
+
+.dia-programacao h3 {
+  color: #ff6f61;
+  font-size: 1.8rem;
+  margin: 15px 0;
+  display: inline-block;
+  padding: 8px 25px;
+  border-radius: 30px;
+  background-color: #fff;
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.08);
 }
 
 .artistas-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  gap: 30px;
+  gap: 25px;
   justify-items: center;
   margin: 20px auto;
   max-width: 1200px;
-  align-items: start;
 }
 
 .artista-card {
   width: 100%;
   max-width: 350px;
-  border: 1px solid #ddd;
-  border-radius: 8px;
+  border: 1px solid #e0e0e0;
+  border-radius: 12px;
   padding: 20px;
-  margin: 15px 0;
-  background-color: #f9f9f9;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  background-color: #fff;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.08);
   transition: all 0.3s ease;
   text-align: center;
   display: flex;
   flex-direction: column;
-  height: auto;
-  min-height: 620px; /* Altura ajustada para comportar o conteúdo padrão */
+  height: 620px; /* Altura fixa para todos os cartões */
+  position: relative;
+  overflow: hidden;
 }
 
 .artista-card.video-expanded {
   height: auto;
+  min-height: 620px;
   z-index: 2;
   box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
 }
 
 .artista-card:hover {
   transform: translateY(-5px);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+  border-color: #ff6f61;
+}
+
+.artista-card h3 {
+  color: #ff6f61;
+  font-size: 1.5rem;
+  margin-top: 0;
+  margin-bottom: 10px;
 }
 
 .artista-info {
   flex: 1;
   display: flex;
   flex-direction: column;
-  align-items: center; /* Centraliza elementos horizontalmente */
+  align-items: center;
+  justify-content: space-between; /* Distribui o conteúdo verticalmente */
+  height: 100%;
 }
 
 .artista-imagem-container {
-  width: 300px;
-  height: 300px;
-  margin: 10px auto;
+  width: 90%;
+  height: 250px;
+  margin: 15px auto;
   overflow: hidden;
   position: relative;
-  border-radius: 5px;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
 }
 
 .artista-imagem {
   width: 100%;
   height: 100%;
   object-fit: cover; /* Mantém a proporção da imagem e corta o excesso */
-  border-radius: 5px;
+  border-radius: 8px;
   cursor: pointer;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  transition: transform 0.3s ease, filter 0.3s ease;
 }
 
 .artista-imagem:hover {
-  transform: scale(1.02);
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  transform: scale(1.05);
+  filter: brightness(1.05);
 }
 
 .artista-descricao {
-  height: 80px; /* Altura fixa para a descrição */
+  height: 100px; /* Altura fixa para a descrição */
   overflow: auto; /* Permite rolagem se o texto for muito longo */
-  margin: 10px 0;
+  margin: 15px 0;
+  padding: 0 5px;
+  font-size: 0.95rem;
+  line-height: 1.5;
+  color: #555;
+}
+
+/* Barra de rolagem personalizada */
+.artista-descricao::-webkit-scrollbar {
+  width: 6px;
+}
+
+.artista-descricao::-webkit-scrollbar-track {
+  background: #f1f1f1;
+  border-radius: 10px;
+}
+
+.artista-descricao::-webkit-scrollbar-thumb {
+  background: #ff6f61;
+  border-radius: 10px;
+}
+
+.artista-descricao::-webkit-scrollbar-thumb:hover {
+  background: #e5635c;
 }
 
 .video-container {
@@ -129,6 +179,8 @@
   overflow: hidden;
   width: 100%;
   margin: 15px auto;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
 }
 
 .video-container iframe {
@@ -137,7 +189,7 @@
   left: 0;
   width: 100%;
   height: 100%;
-  border-radius: 5px;
+  border-radius: 8px;
 }
 
 .programacao h2 {
@@ -148,10 +200,121 @@
   text-align: center;
 }
 
-.dia-programacao h3 {
-  background-color: #f0f0f0;
-  padding: 10px 20px;
-  border-radius: 5px;
-  display: inline-block;
+/* Volunteer button */
+.volunteer-button-container {
+  display: flex;
+  justify-content: center;
+  margin: 30px 0;
+}
+
+.volunteer-button {
+  background-color: #ff6f61;
+  color: white;
+  border: none;
+  padding: 12px 20px;
+  border-radius: 4px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s, transform 0.2s;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.volunteer-button:hover {
+  background-color: #e5635c;
+  transform: translateY(-2px);
+}
+
+/* Footer styles */
+footer {
+  background-color: #ff6f61;
+  color: white;
+  padding: 15px;
+  border-radius: 0 0 8px 8px;
+  cursor: pointer;
+  text-align: center;
+  transition: background-color 0.3s;
+}
+
+footer:hover {
+  background-color: #e5635c;
+}
+
+.authors {
+  padding: 10px 0;
+}
+
+.authors h3 {
+  margin-top: 0;
+  margin-bottom: 10px;
+}
+
+/* Content area layout */
+.content-area {
+  display: flex;
+  flex-direction: row;
+  gap: 20px;
   margin: 20px 0;
+}
+
+.content-area main {
+  flex: 3;
+}
+
+.content-area aside {
+  flex: 1;
+}
+
+/* Footer wrapper */
+.footer-wrapper {
+  cursor: pointer;
+  margin-top: 20px;
+}
+
+/* Authors section in footer */
+.authors {
+  background-color: #ff6f61;
+  color: white;
+  padding: 15px;
+  border-radius: 0 0 8px 8px;
+  text-align: center;
+}
+
+@media (max-width: 768px) {
+  .content-area {
+    flex-direction: column;
+  }
+}
+
+.artista-detalhes {
+  padding: 10px 0;
+  width: 100%;
+}
+
+.artista-hora, .artista-estilo {
+  margin: 5px 0;
+  color: #555;
+}
+
+.artista-estilo {
+  font-style: italic;
+}
+
+.ver-video-btn {
+  background-color: #ff6f61;
+  color: white;
+  border: none;
+  padding: 8px 16px;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 14px;
+  margin-top: 10px;
+  transition: all 0.3s ease;
+  font-weight: 600;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.ver-video-btn:hover {
+  background-color: #e5635c;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }

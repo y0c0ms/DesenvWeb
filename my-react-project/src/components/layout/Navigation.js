@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 /**
  * Navigation component for the site header
@@ -8,8 +9,8 @@ function Navigation() {
   return (
     <nav>
       <ul>
-        <li><a href="/">Início</a></li>
-        <li><a href="/voluntario.html">Candidatura a Voluntário</a></li>
+        <li><Link to="/">Início</Link></li>
+        <li><Link to="/voluntario">Candidatura a Voluntário</Link></li>
       </ul>
     </nav>
   );

@@ -1,44 +1,63 @@
-import React from 'react';
+import React, { useState } from 'react';
 
 function Artista({ nome, imagem, estilo, descricao, urlVideo, data, hora }) {
+  const [videoVisible, setVideoVisible] = useState(false);
+  
   const toggleVideo = (event) => {
     const artistaCard = event.target.closest('.artista-card');
-    const videoContainer = artistaCard.querySelector('.video-container');
     
-    if (videoContainer) {
-      if (videoContainer.style.display === 'none' || videoContainer.style.display === '') {
-        videoContainer.style.display = 'block';
-        artistaCard.classList.add('video-expanded');
-        
-        // Scroll para o vídeo com uma pequena animação
-        setTimeout(() => {
+    if (videoVisible) {
+      artistaCard.classList.remove('video-expanded');
+    } else {
+      artistaCard.classList.add('video-expanded');
+      
+      // Scroll para o vídeo com uma pequena animação
+      setTimeout(() => {
+        const videoContainer = artistaCard.querySelector('.video-container');
+        if (videoContainer) {
           videoContainer.scrollIntoView({ behavior: 'smooth', block: 'center' });
-        }, 100);
-      } else {
-        videoContainer.style.display = 'none';
-        artistaCard.classList.remove('video-expanded');
-      }
+        }
+      }, 100);
     }
+    
+    setVideoVisible(!videoVisible);
   };
 
   return (
-    <div className="artista-card">
+    <div className={`artista-card ${videoVisible ? 'video-expanded' : ''}`}>
       <div className="artista-info">
         <h3>{nome}</h3>
-        <p>Atuação: {data} às {hora}</p>
+        
         <div className="artista-imagem-container">
           <img 
             src={imagem} 
             alt={`Foto de ${nome}`} 
             className="artista-imagem" 
-            onClick={toggleVideo}
+            onClick={urlVideo ? toggleVideo : undefined}
+            style={urlVideo ? { cursor: 'pointer' } : { cursor: 'default' }}
           />
         </div>
-        <p>Estilo musical: {estilo}</p>
-        <p className="artista-descricao">{descricao}</p>
+        
+        <div className="artista-detalhes">
+          <p className="artista-hora"><strong>Atuação:</strong> {data} às {hora}</p>
+          <p className="artista-estilo"><strong>Estilo musical:</strong> {estilo}</p>
+          <div className="artista-descricao">
+            <p>{descricao}</p>
+          </div>
+          
+          {urlVideo && (
+            <button 
+              className="ver-video-btn" 
+              onClick={toggleVideo}
+            >
+              {videoVisible ? 'Esconder Vídeo' : 'Ver Vídeo'}
+            </button>
+          )}
+        </div>
       </div>
-      {urlVideo && (
-        <div className="video-container" style={{ display: 'none' }}>
+      
+      {urlVideo && videoVisible && (
+        <div className="video-container">
           <iframe
             width="560"
             height="315"

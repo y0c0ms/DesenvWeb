@@ -15,8 +15,6 @@ function Programacao() {
 
   return (
     <div className="programacao">
-      <h2>Programação do Festival</h2>
-      
       {Object.keys(artistasPorData).map(data => (
         <div key={data} className="dia-programacao">
           <h3>{data}</h3>
