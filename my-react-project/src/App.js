@@ -66,9 +66,9 @@ function App() {
         {showAuthors ? (
           <div className="authors">
             <h3>Autores do Site</h3>
-            <p>João Silva - Desenvolvimento Frontend</p>
-            <p>Maria Santos - Design UI/UX</p>
-            <p>Carlos Oliveira - Desenvolvimento Backend</p>
+            <p>Alexandre Mendes - 111026</p>
+            <p>Manuel Santos - 111087</p>
+            <p>Vlad Ganta - 110672</p>
           </div>
         ) : (
           <Footer />
