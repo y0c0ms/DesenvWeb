@@ -1,0 +1,27 @@
+[
+  {
+    "id": "franzFerdinand",
+    "nome": "Franz Ferdinand",
+    "estilo": "Rock Alternativo"
+  },
+  {
+    "id": "zahoSagazan",
+    "nome": "Zaho de Sagazan",
+    "estilo": "Pop Alternativo"
+  },
+  {
+    "id": "anaFrango",
+    "nome": "Ana Frango Elétrico",
+    "estilo": "Rock Alternativo"
+  },
+  {
+    "id": "gnr",
+    "nome": "GNR",
+    "estilo": "Rock Português"
+  },
+  {
+    "id": "xutos",
+    "nome": "Xutos & Pontapés",
+    "estilo": "Rock Português"
+  }
+] 

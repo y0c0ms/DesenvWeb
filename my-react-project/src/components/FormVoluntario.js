@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useCallback } from 'react';
+import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import './FormVoluntario.css';
 import Header from './layout/Header';
@@ -30,7 +30,7 @@ function FormVoluntario() {
   const [formErrors, setFormErrors] = useState({});
 
   // Função para validar comentário, proibindo palavras especificadas
-  const validateComment = useCallback((text) => {
+  const validateComment = (text) => {
     if (!text) {
       setComentarioValido(true);
       setComentarioMsg("");
@@ -54,10 +54,10 @@ function FormVoluntario() {
     setComentarioMsg(isValid ? "comentário aceite" : "comentário contém palavras proibidas");
     
     return isValid;
-  }, []);
+  };
 
   // Função para validar o formulário completo
-  const validateForm = useCallback(() => {
+  const validateForm = () => {
     const errors = {};
     
     // Validar nome
@@ -88,20 +88,10 @@ function FormVoluntario() {
     }
     
     setFormErrors(errors);
-    setFormValid(Object.keys(errors).length === 0);
-  }, [nome, contacto, diasCount, dias, horarios, comentarioValido, comentario]);
-
-  // Efeito para validar o formulário completo
-  useEffect(() => {
-    validateForm();
-  }, [validateForm]);
-
-  // Efeito para validar comentário em tempo real
-  useEffect(() => {
-    if (comentario) {
-      validateComment(comentario);
-    }
-  }, [comentario, validateComment]);
+    const isValid = Object.keys(errors).length === 0;
+    setFormValid(isValid);
+    return isValid;
+  };
 
   // Função para selecionar o número de dias
   const selectDay = (days) => {
@@ -117,31 +107,60 @@ function FormVoluntario() {
         4: "24"
       });
     }
+    
+    // Valida o formulário após alteração
+    setTimeout(validateForm, 0);
   };
 
   // Função para atualizar o dia específico
   const handleDiaChange = (index, value) => {
-    setDias({
+    const newDias = {
       ...dias,
       [index]: value
-    });
+    };
+    setDias(newDias);
+    
+    // Valida o formulário após alteração
+    setTimeout(validateForm, 0);
   };
 
   // Função para selecionar horário
   const selectHorario = (index, value) => {
-    setHorarios({
+    const newHorarios = {
       ...horarios,
       [index]: value
-    });
+    };
+    setHorarios(newHorarios);
+    
+    // Valida o formulário após alteração
+    setTimeout(validateForm, 0);
+  };
+  
+  // Função para lidar com alterações de nome
+  const handleNomeChange = (e) => {
+    setNome(e.target.value);
+    setTimeout(validateForm, 0);
+  };
+  
+  // Função para lidar com alterações de contacto
+  const handleContactoChange = (e) => {
+    setContacto(e.target.value);
+    setTimeout(validateForm, 0);
+  };
+  
+  // Função para lidar com alterações de comentário
+  const handleComentarioChange = (e) => {
+    const newComentario = e.target.value;
+    setComentario(newComentario);
+    validateComment(newComentario);
+    setTimeout(validateForm, 0);
   };
 
   // Função para lidar com o envio do formulário
   const handleSubmit = (e) => {
     e.preventDefault();
     
-    if (!formValid) {
-      // Destacar todos os erros
-      validateForm();
+    if (!validateForm()) {
       return;
     }
     
@@ -182,7 +201,7 @@ function FormVoluntario() {
                     id="nome" 
                     name="nome" 
                     value={nome}
-                    onChange={(e) => setNome(e.target.value)}
+                    onChange={handleNomeChange}
                     className={formErrors.nome ? "error" : ""}
                     required 
                   />
@@ -197,7 +216,7 @@ function FormVoluntario() {
                     name="contacto" 
                     pattern="[0-9]+" 
                     value={contacto}
-                    onChange={(e) => setContacto(e.target.value)}
+                    onChange={handleContactoChange}
                     className={formErrors.contacto ? "error" : ""}
                     required 
                   />
@@ -207,24 +226,23 @@ function FormVoluntario() {
               
               <div className="form-section">
                 <h3>Disponibilidade</h3>
-                <p>
-                  <label>Quantos dias você pode participar?</label>
-                </p>
-                <div className="day-buttons">
-                  {[1, 2, 3, 4].map((day) => (
-                    <button
-                      key={day}
-                      type="button"
-                      className={`day-button ${diasCount === day ? 'active' : ''}`}
-                      onClick={() => selectDay(day)}
-                    >
-                      {day} {day === 1 ? 'Dia' : 'Dias'}
-                    </button>
-                  ))}
+                <div className="days-selector">
+                  <p>Selecione quantos dias pode estar presente:</p>
+                  <div className="days-buttons">
+                    {[1, 2, 3, 4].map((dayCount) => (
+                      <button
+                        key={dayCount}
+                        type="button"
+                        className={`day-button ${diasCount === dayCount ? 'active' : ''}`}
+                        onClick={() => selectDay(dayCount)}
+                      >
+                        {dayCount} {dayCount === 1 ? 'dia' : 'dias'}
+                      </button>
+                    ))}
+                  </div>
                 </div>
                 
-                {/* Grupos de data/hora */}
-                <div id="daysContainer">
+                <div className="days-container">
                   {Array.from({ length: diasCount }, (_, i) => i + 1).map((dayIndex) => (
                     <div className="dayGroup" key={dayIndex}>
                       <div className="day-header">
@@ -282,7 +300,7 @@ function FormVoluntario() {
                     rows="4" 
                     cols="50"
                     value={comentario}
-                    onChange={(e) => setComentario(e.target.value)}
+                    onChange={handleComentarioChange}
                     className={!comentarioValido ? "error" : ""}
                   ></textarea>
                   <span id="comentarioMsg" className={comentarioValido ? "valid" : "invalid"}>
@@ -291,7 +309,7 @@ function FormVoluntario() {
                 </div>
               </div>
               
-              <div className="form-actions">
+              <div className="form-submit">
                 <button 
                   type="submit" 
                   disabled={!formValid}

@@ -1,0 +1,120 @@
+.resultados-container {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 20px;
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.resultados-container h2 {
+  color: #3e3e3e;
+  font-size: 28px;
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.resultados-secao {
+  margin-bottom: 30px;
+  padding-bottom: 20px;
+  border-bottom: 1px solid #eee;
+}
+
+.resultados-secao:last-child {
+  border-bottom: none;
+}
+
+.resultados-secao h3 {
+  font-size: 22px;
+  color: #4c8bf5;
+  margin-bottom: 15px;
+  padding-bottom: 8px;
+  border-bottom: 2px solid #f0f0f0;
+}
+
+.ranking-container {
+  overflow-x: auto;
+}
+
+.ranking-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 10px;
+}
+
+.ranking-table th, 
+.ranking-table td {
+  padding: 12px 15px;
+  text-align: left;
+  border-bottom: 1px solid #eee;
+}
+
+.ranking-table th {
+  background-color: #f8f9fa;
+  font-weight: bold;
+  color: #555;
+}
+
+.ranking-table tr:hover {
+  background-color: #f5f5f5;
+}
+
+.criticas-container {
+  margin-top: 15px;
+}
+
+.criticas-list {
+  list-style-type: none;
+  padding: 0;
+}
+
+.critica-item {
+  padding: 12px 15px;
+  border-left: 3px solid #4c8bf5;
+  background-color: #f8f9fa;
+  margin-bottom: 10px;
+  border-radius: 0 4px 4px 0;
+}
+
+.no-data {
+  color: #888;
+  font-style: italic;
+  padding: 10px 0;
+}
+
+.resultados-botoes {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 30px;
+}
+
+.resultados-botoes button {
+  padding: 10px 20px;
+  background-color: #4c8bf5;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s, transform 0.2s;
+}
+
+.resultados-botoes button:hover {
+  background-color: #3a7ad9;
+  transform: translateY(-2px);
+}
+
+@media (max-width: 768px) {
+  .resultados-container {
+    padding: 15px;
+  }
+  
+  .resultados-botoes {
+    flex-direction: column;
+    gap: 10px;
+  }
+  
+  .resultados-botoes button {
+    width: 100%;
+  }
+} 

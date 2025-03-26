@@ -4,8 +4,9 @@ import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import './index.css';
 import App from './App';
 import FormVoluntario from './components/FormVoluntario';
-import TestComponent from './components/TestComponent';
-import SimpleHome from './components/SimpleHome';
+import Inquerito from './components/Inquerito';
+import InqueritoResposta from './components/InqueritoResposta';
+import InqueritoResultados from './components/InqueritoResultados';
 import reportWebVitals from './reportWebVitals';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
@@ -14,9 +15,10 @@ root.render(
     <BrowserRouter>
       <Routes>
         <Route path="/" element={<App />} />
-        <Route path="/simple" element={<SimpleHome />} />
         <Route path="/voluntario" element={<FormVoluntario />} />
-        <Route path="/test" element={<TestComponent />} />
+        <Route path="/inquerito" element={<Inquerito />} />
+        <Route path="/inquerito/resposta" element={<InqueritoResposta />} />
+        <Route path="/inquerito/resultados" element={<InqueritoResultados />} />
       </Routes>
     </BrowserRouter>
   </React.StrictMode>

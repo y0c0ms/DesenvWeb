@@ -1,0 +1,147 @@
+.inquerito-container {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 20px;
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.inquerito-container h2 {
+  color: #3e3e3e;
+  font-size: 28px;
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.inquerito-form {
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+}
+
+.form-section {
+  margin-bottom: 10px;
+}
+
+.form-section h3 {
+  font-size: 18px;
+  margin-bottom: 15px;
+  color: #555;
+}
+
+.checkbox-group, .radio-group {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-left: 10px;
+}
+
+.checkbox-label, .radio-label {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.checkbox-label input, .radio-label input {
+  cursor: pointer;
+}
+
+textarea {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  font-size: 16px;
+  font-family: inherit;
+  resize: vertical;
+}
+
+.form-actions {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 15px;
+}
+
+.form-submit button, .ver-resultados button {
+  padding: 12px 24px;
+  background-color: #4c8bf5;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s, transform 0.2s;
+}
+
+.form-submit button:hover, .ver-resultados button:hover {
+  background-color: #3a7ad9;
+  transform: translateY(-2px);
+}
+
+.ver-resultados button {
+  background-color: #5a6268;
+}
+
+.ver-resultados button:hover {
+  background-color: #4a5258;
+}
+
+.agradecimento {
+  text-align: center;
+  padding: 30px;
+}
+
+.agradecimento h2 {
+  color: #4c8bf5;
+  margin-bottom: 15px;
+}
+
+.agradecimento p {
+  margin-bottom: 25px;
+  font-size: 16px;
+}
+
+.agradecimento button {
+  padding: 10px 20px;
+  background-color: #4c8bf5;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.agradecimento button:hover {
+  background-color: #3a7ad9;
+}
+
+@media (max-width: 768px) {
+  .inquerito-container {
+    padding: 15px;
+  }
+  
+  .inquerito-container h2 {
+    font-size: 24px;
+  }
+  
+  .form-section h3 {
+    font-size: 16px;
+  }
+  
+  .form-actions {
+    flex-direction: column;
+    gap: 10px;
+  }
+  
+  .form-submit, .ver-resultados {
+    width: 100%;
+  }
+  
+  .form-submit button, .ver-resultados button {
+    width: 100%;
+  }
+} 

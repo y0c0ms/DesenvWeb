@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { useNavigate } from 'react-router-dom';
 import './App.css';
 import './style.css'; // Main site styling
@@ -31,12 +31,6 @@ const festivalImages = [img1, img2, img3, img4, img5, img6, img7, img8];
  */
 function App() {
   const navigate = useNavigate();
-  const [showAuthors, setShowAuthors] = useState(false);
-  
-  // Toggle para mostrar autores no footer
-  const toggleFooter = () => {
-    setShowAuthors(!showAuthors);
-  };
   
   return (
     <div className="container">
@@ -56,24 +50,20 @@ function App() {
             >
               Inscreva-se como Voluntário
             </button>
+            
+            <button 
+              className="survey-button"
+              onClick={() => navigate('/inquerito')}
+            >
+              Participar no Inquérito
+            </button>
           </div>
         </main>
         
         <AsideNoticias />
       </div>
       
-      <div className="footer-wrapper" onClick={toggleFooter}>
-        {showAuthors ? (
-          <div className="authors">
-            <h3>Autores do Site</h3>
-            <p>Alexandre Mendes - 111026</p>
-            <p>Manuel Santos - 111087</p>
-            <p>Vlad Ganta - 110672</p>
-          </div>
-        ) : (
-          <Footer />
-        )}
-      </div>
+      <Footer />
     </div>
   );
 }
