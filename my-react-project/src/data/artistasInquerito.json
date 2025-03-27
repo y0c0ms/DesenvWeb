@@ -23,5 +23,40 @@
     "id": "xutos",
     "nome": "Xutos & Pontapés",
     "estilo": "Rock Português"
+  },
+  {
+    "id": "delfins",
+    "nome": "Delfins",
+    "estilo": "Rock Português"
+  },
+  {
+    "id": "moonspell",
+    "nome": "Moonspell",
+    "estilo": "Metal Gótico"
+  },
+  {
+    "id": "theCult",
+    "nome": "The Cult",
+    "estilo": "Rock"
+  },
+  {
+    "id": "ornatosVioleta",
+    "nome": "Ornatos Violeta",
+    "estilo": "Rock Alternativo"
+  },
+  {
+    "id": "capitaoFausto",
+    "nome": "Capitão Fausto",
+    "estilo": "Pop Rock"
+  },
+  {
+    "id": "davidFonseca",
+    "nome": "David Fonseca",
+    "estilo": "Pop Rock"
+  },
+  {
+    "id": "theLibertines",
+    "nome": "The Libertines",
+    "estilo": "Rock"
   }
 ] 

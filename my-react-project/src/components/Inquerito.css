@@ -1,4 +1,5 @@
 .inquerito-container {
+  width: 100%;
   max-width: 800px;
   margin: 0 auto;
   padding: 20px;
@@ -8,140 +9,196 @@
 }
 
 .inquerito-container h2 {
-  color: #3e3e3e;
-  font-size: 28px;
   text-align: center;
   margin-bottom: 30px;
+  color: #333;
+  font-size: 1.8rem;
 }
 
 .inquerito-form {
   display: flex;
   flex-direction: column;
-  gap: 25px;
+  gap: 20px;
 }
 
 .form-section {
-  margin-bottom: 10px;
+  padding: 15px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  background-color: #f9f9f9;
 }
 
 .form-section h3 {
-  font-size: 18px;
+  margin-top: 0;
   margin-bottom: 15px;
-  color: #555;
+  font-size: 1.2rem;
+  color: #444;
 }
 
-.checkbox-group, .radio-group {
+/* Navegação entre dias */
+.dia-navegacao {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 15px;
+  padding: 8px 0;
+  background-color: #eee;
+  border-radius: 4px;
+}
+
+.dia-atual {
+  margin: 0 15px;
+  font-size: 1.1rem;
+  font-weight: bold;
+  color: #333;
+  min-width: 150px;
+  text-align: center;
+}
+
+.seta-navegacao {
+  background: none;
+  border: none;
+  font-size: 1.5rem;
+  color: #4a6da7;
+  cursor: pointer;
+  padding: 0 10px;
+  transition: transform 0.2s;
+}
+
+.seta-navegacao:hover {
+  transform: scale(1.2);
+}
+
+.seta-esquerda:hover {
+  transform: scale(1.2) translateX(-2px);
+}
+
+.seta-direita:hover {
+  transform: scale(1.2) translateX(2px);
+}
+
+.checkbox-group {
   display: flex;
   flex-direction: column;
   gap: 10px;
-  margin-left: 10px;
+}
+
+.radio-group {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10px;
+  padding: 5px;
 }
 
 .checkbox-label, .radio-label {
   display: flex;
   align-items: center;
-  gap: 10px;
-  font-size: 16px;
-  cursor: pointer;
+  gap: 8px;
+  font-size: 1rem;
 }
 
-.checkbox-label input, .radio-label input {
+/* Estilo personalizado para checkbox com cruz quando selecionado */
+.checkbox-custom {
+  appearance: none;
+  -webkit-appearance: none;
+  width: 18px;
+  height: 18px;
+  border: 1px solid #999;
+  border-radius: 2px;
+  margin: 0;
+  cursor: pointer;
+  position: relative;
+  background-color: white;
+}
+
+.checkbox-custom:checked {
+  background-color: white;
+}
+
+.checkbox-custom:checked::after {
+  content: '✕';
+  display: block;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: #333;
+  font-size: 14px;
+  font-weight: bold;
+}
+
+input[type="radio"] {
+  margin: 0;
+  width: 16px;
+  height: 16px;
   cursor: pointer;
 }
 
 textarea {
   width: 100%;
-  padding: 12px;
-  border: 1px solid #ddd;
+  padding: 10px;
+  border: 1px solid #ccc;
   border-radius: 4px;
-  font-size: 16px;
-  font-family: inherit;
   resize: vertical;
+  font-family: inherit;
+  font-size: 1rem;
 }
 
 .form-actions {
   display: flex;
   justify-content: space-between;
-  margin-top: 15px;
+  gap: 15px;
+  margin-top: 20px;
 }
 
-.form-submit button, .ver-resultados button {
-  padding: 12px 24px;
-  background-color: #4c8bf5;
+.submit-btn, .results-btn {
+  padding: 10px 20px;
   color: white;
   border: none;
   border-radius: 4px;
-  font-size: 16px;
   cursor: pointer;
-  transition: background-color 0.3s, transform 0.2s;
+  font-size: 1rem;
+  font-weight: bold;
+  transition: background-color 0.3s;
+  flex: 1;
 }
 
-.form-submit button:hover, .ver-resultados button:hover {
-  background-color: #3a7ad9;
-  transform: translateY(-2px);
+.submit-btn {
+  background-color: #4a6da7;
 }
 
-.ver-resultados button {
+.results-btn {
   background-color: #5a6268;
 }
 
-.ver-resultados button:hover {
+.submit-btn:hover {
+  background-color: #3a5a8f;
+}
+
+.results-btn:hover {
   background-color: #4a5258;
 }
 
-.agradecimento {
-  text-align: center;
-  padding: 30px;
-}
-
-.agradecimento h2 {
-  color: #4c8bf5;
-  margin-bottom: 15px;
-}
-
-.agradecimento p {
-  margin-bottom: 25px;
-  font-size: 16px;
-}
-
-.agradecimento button {
-  padding: 10px 20px;
-  background-color: #4c8bf5;
-  color: white;
-  border: none;
-  border-radius: 4px;
-  font-size: 16px;
-  cursor: pointer;
-  transition: background-color 0.3s;
-}
-
-.agradecimento button:hover {
-  background-color: #3a7ad9;
-}
-
-@media (max-width: 768px) {
+@media (max-width: 600px) {
   .inquerito-container {
     padding: 15px;
   }
   
-  .inquerito-container h2 {
-    font-size: 24px;
+  .form-section {
+    padding: 10px;
   }
   
-  .form-section h3 {
-    font-size: 16px;
+  .radio-group {
+    grid-template-columns: repeat(2, 1fr);
   }
   
   .form-actions {
     flex-direction: column;
-    gap: 10px;
   }
-  
-  .form-submit, .ver-resultados {
-    width: 100%;
-  }
-  
-  .form-submit button, .ver-resultados button {
-    width: 100%;
+}
+
+@media (max-width: 400px) {
+  .radio-group {
+    grid-template-columns: 1fr;
   }
 } 

@@ -5,7 +5,7 @@ import Header from './layout/Header';
 import Navigation from './layout/Navigation';
 import Footer from './layout/Footer';
 import { getRespostaAtual } from '../services/inqueritoService';
-import artistasData from '../data/artistasInquerito.json';
+import artistasData from '../data/artistas.json';
 
 function InqueritoResposta() {
   const navigate = useNavigate();
@@ -27,7 +27,9 @@ function InqueritoResposta() {
     const artistas = [];
     Object.entries(respostaAtual.artistasSelecionados).forEach(([artistaId, selected]) => {
       if (selected) {
-        const artista = artistasData.find(a => a.id === artistaId);
+        // Converter ID para número se for numérico
+        const id = parseInt(artistaId, 10) || artistaId;
+        const artista = artistasData.find(a => a.id === id);
         if (artista) {
           artistas.push(artista.nome);
         }

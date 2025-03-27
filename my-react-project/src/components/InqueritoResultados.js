@@ -5,7 +5,7 @@ import Header from './layout/Header';
 import Navigation from './layout/Navigation';
 import Footer from './layout/Footer';
 import { getEstatisticas } from '../services/inqueritoService';
-import artistasData from '../data/artistasInquerito.json';
+import artistasData from '../data/artistas.json';
 
 function InqueritoResultados() {
   const navigate = useNavigate();
@@ -19,7 +19,9 @@ function InqueritoResultados() {
     
     // Processar estatísticas de artistas
     const artistasProcessados = Object.entries(stats.artistasStats).map(([artistaId, count]) => {
-      const artista = artistasData.find(a => a.id === artistaId);
+      // Converter para número pois agora artista.id é numérico
+      const id = parseInt(artistaId, 10) || artistaId;
+      const artista = artistasData.find(a => a.id === id);
       return {
         id: artistaId,
         nome: artista ? artista.nome : artistaId,

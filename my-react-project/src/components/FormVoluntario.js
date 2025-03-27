@@ -109,7 +109,7 @@ function FormVoluntario() {
     }
     
     // Valida o formulário após alteração
-    setTimeout(validateForm, 0);
+    validateForm();
   };
 
   // Função para atualizar o dia específico
@@ -121,7 +121,7 @@ function FormVoluntario() {
     setDias(newDias);
     
     // Valida o formulário após alteração
-    setTimeout(validateForm, 0);
+    validateForm();
   };
 
   // Função para selecionar horário
@@ -133,19 +133,19 @@ function FormVoluntario() {
     setHorarios(newHorarios);
     
     // Valida o formulário após alteração
-    setTimeout(validateForm, 0);
+    validateForm();
   };
   
   // Função para lidar com alterações de nome
   const handleNomeChange = (e) => {
     setNome(e.target.value);
-    setTimeout(validateForm, 0);
+    validateForm();
   };
   
   // Função para lidar com alterações de contacto
   const handleContactoChange = (e) => {
     setContacto(e.target.value);
-    setTimeout(validateForm, 0);
+    validateForm();
   };
   
   // Função para lidar com alterações de comentário
@@ -153,7 +153,7 @@ function FormVoluntario() {
     const newComentario = e.target.value;
     setComentario(newComentario);
     validateComment(newComentario);
-    setTimeout(validateForm, 0);
+    validateForm();
   };
 
   // Função para lidar com o envio do formulário
@@ -291,32 +291,31 @@ function FormVoluntario() {
               </div>
               
               <div className="form-section">
-                <h3>Comentários Adicionais</h3>
+                <h3>Comentários Adicionais:</h3>
                 <div className="form-field">
-                  <label htmlFor="comentario">Conte-nos um pouco sobre suas experiências anteriores ou por que deseja ser voluntário:</label>
                   <textarea 
-                    id="comentario" 
-                    name="comentario" 
                     rows="4" 
-                    cols="50"
+                    name="comentario" 
                     value={comentario}
                     onChange={handleComentarioChange}
                     className={!comentarioValido ? "error" : ""}
                   ></textarea>
-                  <span id="comentarioMsg" className={comentarioValido ? "valid" : "invalid"}>
-                    {comentarioMsg}
-                  </span>
+                  {comentarioMsg && (
+                    <span className={comentarioValido ? "success-message" : "error-message"}>
+                      {comentarioMsg}
+                    </span>
+                  )}
                 </div>
               </div>
               
-              <div className="form-submit">
+              <div className="form-actions">
                 <button 
                   type="submit" 
+                  className="submit-button"
                   disabled={!formValid}
                 >
-                  Submeter Candidatura
+                  Enviar Inscrição
                 </button>
-                {!formValid && <p className="form-error-summary">Por favor, corrija os erros antes de submeter.</p>}
               </div>
             </form>
           </section>
