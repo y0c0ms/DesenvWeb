@@ -1,56 +1,53 @@
 # Festival Vilar de Mouros 2025
 
-Este projeto é um website para o Festival Vilar de Mouros 2025. O site foi desenvolvido como exercício de HTML, CSS e JavaScript, e possui as seguintes funcionalidades:
+Website do Festival Vilar de Mouros 2025, com programação, candidatura a voluntário e inquérito ao público.
+
+Projeto desenvolvido como exercício de HTML, CSS e JavaScript (React).
 
 ## Funcionalidades
 
-### Página Inicial (index.html)
+- **Cabeçalho com cartaz:** título e cartaz do festival; a imagem fica transparente ao passar o rato sobre ela (`opacity`).
+- **Navegação:** menu com botões para Início e Candidatura a Voluntário.
+- **Slideshow:** 8 fotografias de edições anteriores (`src/imgs/fotoFestival1.jpg` a `fotoFestival8.jpg`), com mudança automática a cada 3 segundos.
+- **Programação:** 20 artistas agrupados por dia (21 a 24 de agosto), com estilo musical, horário e vídeo de cada artista.
+- **Candidatura a voluntário** (`/voluntario`):
+  - nome e contacto;
+  - seleção de 1 a 4 dias de presença; com 4 dias, as datas 21, 22, 23 e 24 são preenchidas automaticamente;
+  - campos de data/hora em `<select>` limitados aos dias do festival;
+  - campo de comentário com o botão "Validar comentário", que rejeita palavras de uma lista proibida (ignora maiúsculas e acentos);
+  - confirmação de inscrição no fim.
+- **Inquérito ao público** (`/inquerito`):
+  - escolha dos artistas de que mais gostou e do horário preferido para os concertos;
+  - respostas guardadas no `localStorage` do navegador;
+  - página de resposta (`/inquerito/resposta`) e página de resultados (`/inquerito/resultados`).
 
-- **Layout Responsivo e Consistente:**  
-  Todas as páginas possuem um layout centralizado e estilizado de forma consistente, com um container principal que utiliza CSS para definir cores, margens, sombras e bordas arredondadas.
+## Stack
 
-- **Cabeçalho com Imagem:**  
-  O header inclui um título e uma imagem do festival.
+- React 19 e React Router 6, criado com `react-scripts` (Create React App), em `my-react-project/`.
+- Páginas estáticas em `my-react-project/public/` (`voluntario.html`, `aceite.html`, `test.html`), com CSS e JavaScript simples.
 
-- **Efeito Hover:**  
-  A imagem do festival desaparece (através de um efeito de opacidade) quando o usuário passa o rato sobre ela, e reaparece quando o rato é retirado.
+## Run it
 
-- **Menu de Navegação Responsivo:**  
-  O menu de navegação foi estilizado para se apresentar como botões responsivos, com cores e transições semelhantes ao exemplo do W3Schools.
+Aplicação React (a partir de `my-react-project/`):
 
-- **Slideshow:**  
-  Um slideshow exibe uma sequência de imagens dos festivais anteriores (por exemplo, "multidao2022.png" e "rio2003.jpeg", além de outras imagens presentes na pasta `imgs`).  
-  As imagens alternam automaticamente a cada 3 segundos.
+```bash
+cd my-react-project
+npm install
+npm start
+```
 
-- **Conteúdo e Programação:**  
-  A página inclui seções sobre o festival, a programação (tabelas com horários e artistas para diferentes datas) e links para festivais recomendados.
+O script `start` definido em `package.json` usa a sintaxe do Windows (`SET NODE_OPTIONS=... &&`). Em Linux ou macOS, execute:
 
-### Página de Candidatura a Voluntário (voluntario.html)
+```bash
+cd my-react-project
+npm install
+NODE_OPTIONS=--openssl-legacy-provider npx react-scripts start
+```
 
-- **Formulário Dinâmico:**  
-  O formulário permite que o voluntário insira nome, contato e selecione quantos dias pode estar presente utilizando um slider.  
-  Conforme o valor do slider (de 1 a 4), os grupos de data/hora são exibidos dinamicamente.  
-  Se o valor máximo (4) for selecionado, os selects são automaticamente preenchidos com os dias fixos do festival (21, 22, 23 e 24).  
-  Os campos de data utilizam `<select>` para limitar as opções aos dias 21, 22, 23 e 24.
-
-- **Validação de Comentário:**  
-  O formulário inclui um campo para comentários com um botão **"Validar comentário"**.  
-  A função JavaScript `validateComment()` verifica se o comentário contém palavras proibidas.  
-  A verificação é **case-insensitive** e **accent-insensitive**, utilizando a normalização de texto (com `normalize("NFD")` e remoção de diacríticos).  
-  Caso o comentário contenha alguma das palavras proibidas (como "abécula", "abentesma", "achavascado", entre outras), o comentário é rejeitado, o campo é limpo e um alerta é exibido.
-
-### Página de Confirmação (aceite.html)
-
-- **Mensagem de Aceitação:**  
-  Ao submeter o formulário de candidatura, o usuário é redirecionado para uma página que confirma que a candidatura foi aceita, com um botão para retornar à página inicial.
+Páginas estáticas: abra `my-react-project/public/voluntario.html` ou `my-react-project/public/aceite.html` diretamente no navegador.
 
 ## Considerações
 
-- **Imagens:**  
-  Certifique-se de que todas as imagens referenciadas (por exemplo, as imagens do slideshow e a imagem do festival) estão na pasta correta conforme os caminhos definidos no HTML.
-
-- **Validação do Comentário:**  
-  A lista de palavras proibidas está configurada para rejeitar palavras específicas independentemente de variações de acentuação e maiúsculas/minúsculas.
-
-- **Compatibilidade:**  
-  O site foi desenvolvido para funcionar em navegadores modernos que suportem as APIs de normalização de strings (`normalize()`) e outros recursos do JavaScript ES6+.
+- **Imagens:** as imagens do slideshow e o cartaz estão em `my-react-project/src/imgs/`.
+- **Validação do comentário:** a verificação remove acentos (`normalize("NFD")`) e compara em minúsculas.
+- **Compatibilidade:** requer um navegador moderno com suporte a `String.prototype.normalize()` e JavaScript ES6+.
